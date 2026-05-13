@@ -4,14 +4,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>FAQ – 7-Zip</title>
+<meta name="description" content="Frequently asked questions about 7-Zip: licensing, formats, encryption, command line usage, and more.">
 <link rel="canonical" href="https://www.7-zip.org/faq.html">
 <link rel="stylesheet" href="style.css">
 <style>
-.faq-q { cursor: pointer; padding: 1rem; border-radius: var(--radius-sm); background: var(--glass); margin-bottom: 0.5rem; transition: background 0.2s; }
-.faq-q:hover { background: rgba(255,255,255,0.08); }
-.faq-q h4 { color: var(--text); display:flex; justify-content:space-between; align-items:center; margin:0; }
-.faq-a { padding: 0 1rem 1rem 1rem; color: var(--text-muted); display: none; }
-.faq-a.open { display: block; }
+.faq-item { margin-bottom: 0.75rem; border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; transition: border-color 0.2s; }
+.faq-item:hover { border-color: var(--border-hover); }
+.faq-q {
+  cursor: pointer; padding: 1.25rem 1.5rem;
+  background: var(--glass);
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  user-select: none;
+}
+.faq-q h4 { color: var(--text); margin: 0; font-size: 1rem; font-weight: 600; }
+.faq-chevron { flex-shrink: 0; transition: transform 0.3s ease; color: var(--accent); }
+.faq-item.open .faq-chevron { transform: rotate(180deg); }
+.faq-a {
+  padding: 0 1.5rem; max-height: 0; overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  color: var(--text-muted); line-height: 1.8;
+}
+.faq-item.open .faq-a { max-height: 500px; padding: 1rem 1.5rem 1.5rem; }
+.faq-tag {
+  display: inline-block; font-family: var(--font-mono); font-size: 0.7rem;
+  padding: 0.2rem 0.6rem; border-radius: 50px; margin-bottom: 1.25rem;
+  background: rgba(0,212,255,0.1); border: 1px solid rgba(0,212,255,0.2); color: var(--accent);
+}
 </style>
 </head>
 <body>
@@ -32,34 +50,127 @@
     <li><a href="contributors.html" data-i18n="nav_community">Community</a></li>
   </ul>
   <div class="lang-dropdown">
-    <button class="lang-btn"><span id="activeLang">English</span></button>
+    <button class="lang-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+      <span id="activeLang">English</span>
+      <svg width="14" height="14" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+    </button>
     <div class="lang-menu">
-      <button data-lang="en">English</button><button data-lang="bn">বাংলা</button><button data-lang="hi">हिन्दी</button>
-      <button data-lang="zh-CN">简体中文</button><button data-lang="zh-TW">繁體中文</button>
-      <button data-lang="es">Español</button><button data-lang="fr">Français</button>
+      <button data-lang="en">English</button><button data-lang="zh-CN">简体中文</button><button data-lang="zh-TW">繁體中文</button><button data-lang="hi">हिन्दी</button><button data-lang="bn">বাংলা</button><button data-lang="es">Español</button><button data-lang="pt-BR">Português</button><button data-lang="ja">日本語</button><button data-lang="fr">Français</button><button data-lang="de">Deutsch</button><button data-lang="th">ไทย</button><button data-lang="vi">Tiếng Việt</button><button data-lang="eo">Esperanto</button>
     </div>
   </div>
 </nav>
 
 <main class="container">
-  <div class="bento-grid" style="padding-top: 6rem;">
+  <div class="bento-grid" style="padding-top:6rem;">
     <div class="bento-card col-span-12">
-      <h1 style="font-size:2.5rem; margin-bottom:1rem;">Frequently Asked Questions</h1>
-      
-      <div style="margin-top:2rem;">
-        <div class="faq-q" onclick="this.nextElementSibling.classList.toggle('open')">
-          <h4>Is 7-Zip free for commercial use? <svg width="16" height="16" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></h4>
+      <div class="faq-tag">HELP CENTER</div>
+      <h1 style="font-size:2.5rem; margin-bottom:0.5rem;">Frequently Asked Questions</h1>
+      <p class="text-muted" style="margin-bottom:2.5rem;">Everything you need to know about 7-Zip — licensing, formats, encryption, and more.</p>
+
+      <!-- Licensing -->
+      <p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent-2); font-weight:700; margin-bottom:1rem;">Licensing &amp; Cost</p>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          <h4>Is 7-Zip free for commercial use?</h4>
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </div>
-        <div class="faq-a">Yes, 7-Zip is open source software. Most of the source code is under the GNU LGPL license. You can use 7-Zip on any computer, including a computer in a commercial organization. You don't need to register or pay for 7-Zip.</div>
-        
-        <div class="faq-q" onclick="this.nextElementSibling.classList.toggle('open')">
-          <h4>Why can't 7-Zip open some ZIP archives? <svg width="16" height="16" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></h4>
-        </div>
-        <div class="faq-a">In most cases, this means that the archive contains a header that does not conform to the ZIP specification. Try using the latest version of 7-Zip. If it still fails, the archive might be corrupted.</div>
+        <div class="faq-a">Yes. 7-Zip is open source software. Most of the source code is under the <strong>GNU LGPL license</strong>. You can use 7-Zip on any computer, including in a commercial organization. You don't need to register or pay for it.</div>
       </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          <h4>Can I redistribute 7-Zip with my software?</h4>
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+        <div class="faq-a">Yes. The unRAR code is under a mixed license — GNU LGPL + unRAR restriction. If you distribute 7-Zip in your product, you must mention it in your documentation and respect the LGPL and unRAR terms. The 7z format SDK itself is public domain.</div>
+      </div>
+
+      <!-- Compression -->
+      <p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent-2); font-weight:700; margin:1.5rem 0 1rem;">Compression &amp; Formats</p>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          <h4>What compression ratio does 7-Zip achieve?</h4>
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+        <div class="faq-a">7-Zip typically achieves <strong>2–10% better compression</strong> than WinZip or WinRAR for the 7z format. For ZIP format, it uses the Deflate and BZip2 algorithms and achieves similar compression to comparable tools. LZMA2 with ultra settings delivers the best possible compression ratio.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          <h4>Why can't 7-Zip open some ZIP archives?</h4>
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+        <div class="faq-a">In most cases this means the archive contains headers that don't conform to the ZIP specification, or the file was created by a tool with non-standard extensions. Try the latest version of 7-Zip. If it still fails, the archive may be corrupted or encrypted with an unsupported method.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          <h4>What formats can 7-Zip open but not create?</h4>
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+        <div class="faq-a">7-Zip can open (read) many formats including: <strong>AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VMDK, XAR, Z</strong>. However, it can only <em>create</em> 7z, XZ, BZIP2, GZIP, TAR, ZIP, and WIM archives.</div>
+      </div>
+
+      <!-- Security -->
+      <p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent-2); font-weight:700; margin:1.5rem 0 1rem;">Security &amp; Encryption</p>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          <h4>How strong is the 7-Zip encryption?</h4>
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+        <div class="faq-a">7-Zip uses <strong>AES-256</strong> encryption for the 7z and ZIP formats. AES-256 is a military-grade cipher and is considered computationally infeasible to brute-force with current technology. For 7z archives, 7-Zip also supports encrypting file names, so no metadata is exposed without the password.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          <h4>Can I recover a forgotten password from a 7z archive?</h4>
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+        <div class="faq-a">No. Due to the AES-256 encryption standard used by 7-Zip, there is no backdoor or recovery mechanism. If you lose the password to an encrypted 7z archive, the data is unrecoverable. Always store passwords in a secure password manager.</div>
+      </div>
+
+      <!-- Usage -->
+      <p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent-2); font-weight:700; margin:1.5rem 0 1rem;">Usage &amp; Command Line</p>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          <h4>How do I use 7-Zip from the command line?</h4>
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+        <div class="faq-a">
+          The command-line tool is <code style="background:rgba(0,0,0,0.3); padding:0.1rem 0.4rem; border-radius:4px; font-family:var(--font-mono);">7z.exe</code> (Windows) or <code style="background:rgba(0,0,0,0.3); padding:0.1rem 0.4rem; border-radius:4px; font-family:var(--font-mono);">7zz</code> (Linux/macOS). Common commands:<br><br>
+          <code style="display:block; background:rgba(0,0,0,0.4); padding:1rem; border-radius:8px; font-family:var(--font-mono); line-height:2; color:var(--accent);">7z a archive.7z folder/&nbsp;&nbsp;&nbsp;# Create archive<br>7z e archive.7z&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Extract files<br>7z l archive.7z&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# List contents<br>7z t archive.7z&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Test integrity</code>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          <h4>Does 7-Zip work on Linux and macOS?</h4>
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+        <div class="faq-a">Yes. Since version 21.01 alpha, 7-Zip ships official binaries for <strong>Linux (x86/x64/ARM)</strong> and <strong>macOS</strong> as command-line tools. There is no official graphical interface for Linux yet, but community ports like <a href="https://github.com/jinfeihan57/p7zip" class="text-accent" target="_blank">p7zip</a> provide integration with file managers.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">
+          <h4>How do I split a large archive into multiple parts?</h4>
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+        <div class="faq-a">
+          In the GUI, use <strong>Add to archive → Split to volumes (bytes)</strong>. On the command line, use the <code style="background:rgba(0,0,0,0.3); padding:0.1rem 0.4rem; border-radius:4px; font-family:var(--font-mono);">-v</code> switch:<br><br>
+          <code style="display:block; background:rgba(0,0,0,0.4); padding:1rem; border-radius:8px; font-family:var(--font-mono); color:var(--accent);">7z a -v100m archive.7z folder/</code><br>
+          This creates <code style="font-family:var(--font-mono);">archive.7z.001</code>, <code style="font-family:var(--font-mono);">archive.7z.002</code>, etc., each 100 MB in size.
+        </div>
+      </div>
+
     </div>
   </div>
 </main>
+
 <footer>
   <div class="container">
     <div style="font-size:1.5rem; font-weight:800; color:var(--accent); margin-bottom:0.5rem;">7-Zip</div>
@@ -67,6 +178,16 @@
   </div>
   <div style="text-align:center; margin-top:1rem; padding-bottom:1rem; font-size:0.9rem; color:var(--accent-2); font-weight:600;" data-i18n="footer_credit">Website redesigned by Softsasi</div>
 </footer>
-<script src="translations.js"></script><script src="script.js"></script>
+
+<script>
+function toggleFAQ(btn) {
+  const item = btn.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+<script src="translations.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
