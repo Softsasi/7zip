@@ -16,6 +16,7 @@ const translations = {
     btn_learn_more: "Learn More",
     scroll_top: "Scroll to top",
     footer_desc: "Free and open-source file archiver. The most powerful compression tool.",
+    footer_credit: "Website redesigned by Softsasi",
     
     // Home Hero
     hero_tag: "Data Forge Engine",
@@ -72,6 +73,7 @@ const translations = {
     btn_learn_more: "আরও জানুন",
     scroll_top: "উপরে যান",
     footer_desc: "ফ্রি এবং ওপেন সোর্স ফাইল আর্কাইভার। সবচেয়ে শক্তিশালী কম্প্রেশন টুল।",
+    footer_credit: "Softsasi দ্বারা ওয়েবসাইট রিডিজাইন করা হয়েছে",
     hero_tag: "ডেটা ফোর্জ ইঞ্জিন",
     hero_title: "সর্বোচ্চ কম্প্রেশন।",
     hero_subtitle: "কোনো আপস নেই।",
@@ -118,6 +120,7 @@ const translations = {
     btn_learn_more: "और जानें",
     scroll_top: "ऊपर जाएं",
     footer_desc: "मुफ़्त और ओपन-सोर्स फ़ाइल आर्काइवर। सबसे शक्तिशाली संपीड़न उपकरण।",
+    footer_credit: "Softsasi द्वारा वेबसाइट का नया डिज़ाइन",
     hero_tag: "डेटा फोर्ज इंजन",
     hero_title: "अधिकतम संपीड़न।",
     hero_subtitle: "कोई समझौता नहीं।",
@@ -164,6 +167,7 @@ const translations = {
     btn_learn_more: "了解更多",
     scroll_top: "回到顶部",
     footer_desc: "免费开源的文件压缩程序。最强大的压缩工具。",
+    footer_credit: "由 Softsasi 重新设计",
     hero_tag: "数据锻造引擎",
     hero_title: "最大压缩率。",
     hero_subtitle: "零妥协。",
