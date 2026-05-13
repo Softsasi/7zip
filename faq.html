@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FAQ – Frequently Asked Questions – 7-Zip</title>
+<meta name="description" content="Frequently asked questions about 7-Zip: usage, compression, compatibility, licensing, and developer questions.">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="https://www.7-zip.org/favicon.ico">
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html" class="nav-brand"><img src="7zip-logo.png" alt="7-Zip Logo" onerror="this.style.display='none'"><span class="brand-name">7-Zip</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li><li><a href="download.html">Download</a></li>
+    <li><a href="7z.html">7z Format</a></li><li><a href="sdk.html">LZMA SDK</a></li>
+    <li><a href="faq.html" class="active">FAQ</a></li><li><a href="support.html">Support</a></li>
+    <li><a href="links.html">Links</a></li><li><a href="contributors.html">Community</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:0.75rem">
+    <div class="lang-dropdown" id="langDropdown">
+      <button class="lang-btn">🌐 English <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="lang-menu">
+        <a href="faq.html" class="current">🇬🇧 English</a>
+        <a href="https://sparanoid.com/lab/7z/" target="_blank">🇨🇳 Chinese (Simplified)</a>
+        <a href="https://www.7-zip.fr/" target="_blank">🇫🇷 French</a>
+        <a href="https://www.7-zip.de/" target="_blank">🇩🇪 German</a>
+        <a href="https://7-zip.opensource.jp/" target="_blank">🇯🇵 Japanese</a>
+        <a href="https://7zip-es.updatestar.com/" target="_blank">🇪🇸 Spanish</a>
+      </div>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="section-label">Help</div>
+  <h1>Frequently Asked Questions</h1>
+  <p>Answers to common questions about 7-Zip usage, compatibility, and development.</p>
+</div>
+
+<section style="padding:3rem 1.5rem 5rem">
+  <div class="container">
+    <div class="grid-2" style="gap:2.5rem;align-items:start">
+
+      <!-- FAQ CONTENT -->
+      <div>
+        <!-- NAV pills -->
+        <div style="display:flex;gap:0.5rem;margin-bottom:2rem;flex-wrap:wrap">
+          <a href="#user-faq" style="background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.25);color:var(--primary);padding:0.4rem 1rem;border-radius:50px;font-size:0.85rem;font-weight:600;text-decoration:none">👤 User FAQ</a>
+          <a href="#dev-faq" style="background:var(--glass);border:1px solid var(--glass-border);color:var(--text-dim);padding:0.4rem 1rem;border-radius:50px;font-size:0.85rem;font-weight:600;text-decoration:none">⚙️ Developer FAQ</a>
+        </div>
+
+        <h2 id="user-faq" style="font-size:1.25rem;font-weight:800;margin-bottom:1.25rem;display:flex;align-items:center;gap:0.5rem">👤 User Questions</h2>
+
+        <div class="faq-item open">
+          <button class="faq-question">Can I use 7-Zip in a commercial organization?<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Yes, 7-Zip is free software. You can use it on any computer, including computers in commercial organizations. You don't need to register or pay for 7-Zip.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">How do I set file associations in Windows 7 / Vista?<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>You must run 7-Zip File Manager in administrator mode. Right-click the 7-Zip File Manager icon, then click <strong>Run as administrator</strong>. You can then change file associations and other options.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Why are 7z archives from newer 7-Zip larger than from older versions?<span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Starting from version 15.06, 7-Zip uses a different file sorting order (by name) for solid 7z archives. The old default was sorting by extension/type.</p>
+            <p>You can restore the old behaviour by specifying <code>qs</code> in the Parameters field (or <code>-mqs</code> in the command line). Sorting "by type" may give better compression when the dictionary size is smaller than the total file size and similar files exist in different folders.</p>
+            <ul>
+              <li>Increase dictionary size — helps when <code>qs</code> is not used.</li>
+              <li>Use <code>qs</code> mode if compression ratio is more important than file order.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Why can't 7-Zip open some ZIP archives?<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>In 99% of cases, the archive contains incorrect headers. Other ZIP programs may silently ignore these errors, but 7-Zip does not. The issue should be reported to the software that created the archive — it is not ZIP-compatible. Some ZIP archives also use unsupported methods such as WAVPack (WinZip).</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Why can't 7-Zip open some RAR archives?<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Older versions (9.20 and below) supported only RAR 2/3/4 formats, not RAR5. Latest versions of 7-Zip support RAR5 archives. Update to the current release to open RAR5 files.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Why does drag-and-drop archive extraction use temp files?<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>7-Zip doesn't know the folder path of the drop target — only Windows Explorer does. Explorer requires decompressed files on disk, so 7-Zip extracts to a temp folder first, then notifies Explorer of the paths. To avoid temp files, use the <strong>Extract</strong> command directly, or drag-and-drop from 7-Zip to 7-Zip.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Why doesn't the command-line version add files without extensions?<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>You're likely using the <code>*.*</code> wildcard. 7-Zip's own wildcard parser treats <code>*.*</code> as "any file with an extension." To include all files (with or without extensions), use <code>*</code> instead of <code>*.*</code>, or omit the wildcard entirely.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Why doesn't the -r switch work as expected?<span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>In most cases you don't need <code>-r</code>. 7-Zip can compress subfolders without it.</p>
+            <pre>7z.exe a c:\a.7z "C:\Program Files"</pre>
+            <p>compresses "C:\Program Files" completely including all subfolders.</p>
+            <pre>7z.exe a -r c:\a.7z "C:\Program Files"</pre>
+            <p>searches for and compresses all folders named "Program Files" anywhere under C:\</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Why can't 7-Zip use a large dictionary in 32-bit Windows?<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>32-bit Windows allocates only 2 GB of virtual address space per application, and this block can be fragmented by DLLs. 64-bit Windows has no such limitation, so you can use any dictionary size on Windows x64 as long as you have sufficient RAM.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">How do I install 7-Zip in silent mode?<span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p><strong>EXE installer:</strong> Use the <code>/S</code> parameter for silent installation and <code>/D="C:\Program Files\7-Zip"</code> to specify the output directory. These switches are case-sensitive.</p>
+            <pre>7z2601-x64.exe /S /D="C:\Program Files\7-Zip"</pre>
+            <p><strong>MSI installer:</strong></p>
+            <pre>msiexec /i 7z2601-x64.msi /q INSTALLDIR="C:\Program Files\7-Zip"</pre>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">How do I recover a corrupted 7z archive?<span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>There are two common corruption scenarios:</p>
+            <ul>
+              <li>You can see the file list but get Data Error or CRC Error when extracting.</li>
+              <li>7-Zip reports "Cannot open file as archive."</li>
+            </ul>
+            <p>Some data recovery may be possible. See the <a href="https://www.7-zip.org/recover.html" target="_blank">7-Zip recovery guide</a> for detailed procedures.</p>
+          </div>
+        </div>
+
+        <h2 id="dev-faq" style="font-size:1.25rem;font-weight:800;margin:2.5rem 0 1.25rem;display:flex;align-items:center;gap:0.5rem">⚙️ Developer Questions</h2>
+
+        <div class="faq-item">
+          <button class="faq-question">Linking errors when compiling with Visual C++ 6.0?<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Visual C++ 6.0 or later is required. Some files also require a Platform SDK from Microsoft. In MSVC, place the SDK directories at the top of the "Include files" and "Library files" lists (<em>Tools → Options → Directories</em>). Note: the latest Platform SDK is not compatible with MSVC6 — use the Windows Server 2003 PSDK (February 2003) with MSVC6.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Can I use 7-Zip EXE or DLL files in a commercial application?<span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Yes, but you must document the following:</p>
+            <ul>
+              <li>That you used parts of the 7-Zip program.</li>
+              <li>That 7-Zip is licensed under the GNU LGPL.</li>
+              <li>Provide a link to <strong>www.7-zip.org</strong> where the source code can be found.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">How can I add 7z archive support to my application?<span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>Two approaches:</p>
+            <ul>
+              <li>Use <code>7z.dll</code> or <code>7za.dll</code> — they work via COM interfaces. A small example is in the <code>CPP\7zip\UI\Client7z</code> folder of the source code.</li>
+              <li>Call the command-line version <code>7za.exe</code> from your application.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Can I use 7-Zip source code in a commercial application?<span class="faq-icon">+</span></button>
+          <div class="faq-answer">
+            <p>7-Zip is licensed under GNU LGPL. In brief: any LGPL-licensed code must remain LGPL. You may create a wrapper DLL or modify the code, but the source of that DLL must be licensed under the LGPL or GPL. Other code in your application may use any license. If you need a more permissive license, consider the <a href="sdk.html">LZMA SDK</a>, which is in the public domain.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div style="display:flex;flex-direction:column;gap:1.25rem;position:sticky;top:80px">
+        <div class="card" style="background:linear-gradient(135deg,rgba(59,130,246,0.08),rgba(6,182,212,0.04));border-color:rgba(59,130,246,0.2)">
+          <div style="font-weight:700;margin-bottom:0.75rem">🔍 Quick Navigation</div>
+          <ul class="link-list">
+            <li><a href="#user-faq">👤 User FAQ</a></li>
+            <li><a href="#dev-faq">⚙️ Developer FAQ</a></li>
+          </ul>
+        </div>
+        <div class="card">
+          <div style="font-weight:700;margin-bottom:0.75rem">💬 Still Have Questions?</div>
+          <p style="color:var(--text-muted);font-size:0.875rem;line-height:1.7;margin-bottom:1rem">Post your question on the 7-Zip forum on SourceForge — developers and experienced users are ready to help.</p>
+          <a href="https://sourceforge.net/p/sevenzip/discussion/45797/" target="_blank" class="btn btn-primary btn-sm" id="faqForumLink">Visit the Forum →</a>
+        </div>
+        <div class="card">
+          <div style="font-weight:700;margin-bottom:0.75rem">📚 Related</div>
+          <ul class="link-list">
+            <li><a href="support.html">Technical Support</a></li>
+            <li><a href="sdk.html">LZMA SDK</a></li>
+            <li><a href="download.html">Download 7-Zip</a></li>
+            <li><a href="https://www.7-zip.org/recover.html" target="_blank">Archive Recovery Guide</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand"><div style="font-size:1.2rem;font-weight:800;background:linear-gradient(135deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">7-Zip</div><p>Free and open-source file archiver. Copyright &copy; 2026 Igor Pavlov.</p></div>
+      <div class="footer-col"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="download.html">Download</a></li><li><a href="7z.html">7z Format</a></li><li><a href="sdk.html">LZMA SDK</a></li></ul></div>
+      <div class="footer-col"><h4>Help</h4><ul><li><a href="faq.html">FAQ</a></li><li><a href="support.html">Support</a></li><li><a href="links.html">Links</a></li><li><a href="contributors.html">Community</a></li></ul></div>
+      <div class="footer-col"><h4>External</h4><ul><li><a href="https://github.com/ip7z/7zip" target="_blank">GitHub</a></li><li><a href="https://sourceforge.net/projects/sevenzip/" target="_blank">SourceForge</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>Copyright &copy; 2026 Igor Pavlov. 7-Zip is free software distributed under the GNU LGPL.</p></div>
+  </div>
+</footer>
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
+<script src="script.js"></script>
+</body>
+</html>

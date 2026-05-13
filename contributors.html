@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Community & Contributors – 7-Zip</title>
+<meta name="description" content="Meet the 7-Zip community. GitHub stats, contributors, issues, and how to get involved.">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="https://www.7-zip.org/favicon.ico">
+<style>
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.revealed{opacity:1;transform:none}
+.contributor-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem}
+.lang-bar-row{display:flex;align-items:center;gap:1rem;margin-bottom:0.75rem}
+.lang-bar-name{width:80px;font-size:0.875rem;color:var(--text-dim);font-weight:500}
+.lang-bar-track{flex:1;height:10px;background:rgba(255,255,255,0.06);border-radius:50px;overflow:hidden}
+.lang-bar-fill{height:100%;border-radius:50px;transition:width 1.2s cubic-bezier(0.4,0,0.2,1)}
+.lang-bar-pct{font-size:0.8rem;color:var(--text-muted);width:45px;text-align:right}
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html" class="nav-brand"><img src="7zip-logo.png" alt="7-Zip Logo" onerror="this.style.display='none'"><span class="brand-name">7-Zip</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li><li><a href="download.html">Download</a></li>
+    <li><a href="7z.html">7z Format</a></li><li><a href="sdk.html">LZMA SDK</a></li>
+    <li><a href="faq.html">FAQ</a></li><li><a href="support.html">Support</a></li>
+    <li><a href="links.html">Links</a></li><li><a href="contributors.html" class="active">Community</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:0.75rem">
+    <div class="lang-dropdown" id="langDropdown">
+      <button class="lang-btn">🌐 English <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="lang-menu">
+        <a href="contributors.html" class="current">🇬🇧 English</a>
+        <a href="https://sparanoid.com/lab/7z/" target="_blank">🇨🇳 Chinese (Simplified)</a>
+        <a href="https://www.7-zip.fr/" target="_blank">🇫🇷 French</a>
+        <a href="https://www.7-zip.de/" target="_blank">🇩🇪 German</a>
+        <a href="https://7-zip.opensource.jp/" target="_blank">🇯🇵 Japanese</a>
+        <a href="https://7zip-es.updatestar.com/" target="_blank">🇪🇸 Spanish</a>
+      </div>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="section-label">Open Source</div>
+  <h1>Community &amp; Contributors</h1>
+  <p>7-Zip is built by Igor Pavlov and supported by an amazing open-source community on GitHub and SourceForge.</p>
+</div>
+
+<section style="padding:3rem 1.5rem 5rem">
+  <div class="container">
+
+    <!-- GITHUB STATS -->
+    <div class="reveal" style="margin-bottom:3rem">
+      <div class="section-label" style="margin-bottom:0.75rem">GitHub Statistics</div>
+      <h2 style="font-size:1.6rem;font-weight:800;margin-bottom:1.5rem">Repository at a Glance</h2>
+      <div class="grid-4">
+        <div class="gh-stat">
+          <div class="gh-stat-num blue">3.1k</div>
+          <div class="gh-stat-label">⭐ Stars</div>
+        </div>
+        <div class="gh-stat">
+          <div class="gh-stat-num green">306</div>
+          <div class="gh-stat-label">🍴 Forks</div>
+        </div>
+        <div class="gh-stat">
+          <div class="gh-stat-num orange">142</div>
+          <div class="gh-stat-label">🐛 Open Issues</div>
+        </div>
+        <div class="gh-stat">
+          <div class="gh-stat-num blue">20</div>
+          <div class="gh-stat-label">🔀 Pull Requests</div>
+        </div>
+        <div class="gh-stat">
+          <div class="gh-stat-num green">13</div>
+          <div class="gh-stat-label">🏷️ Releases</div>
+        </div>
+        <div class="gh-stat">
+          <div class="gh-stat-num blue">39</div>
+          <div class="gh-stat-label">👁️ Watchers</div>
+        </div>
+        <div class="gh-stat">
+          <div class="gh-stat-num orange">14</div>
+          <div class="gh-stat-label">📝 Commits</div>
+        </div>
+        <div class="gh-stat">
+          <div class="gh-stat-num green">87</div>
+          <div class="gh-stat-label">🌍 UI Languages</div>
+        </div>
+      </div>
+      <div style="margin-top:1rem;text-align:center">
+        <a href="https://github.com/ip7z/7zip" target="_blank" class="btn btn-secondary btn-sm" id="ghStarsLink">View on GitHub →</a>
+      </div>
+    </div>
+
+    <!-- CODEBASE LANGUAGES -->
+    <div class="reveal" style="margin-bottom:3rem">
+      <div class="card" style="max-width:600px">
+        <div style="font-weight:700;font-size:1rem;margin-bottom:1.25rem">📊 Codebase Composition</div>
+        <div id="langBars">
+          <div class="lang-bar-row"><span class="lang-bar-name">C++</span><div class="lang-bar-track"><div class="lang-bar-fill" data-width="78.5%" style="background:linear-gradient(90deg,#3b82f6,#06b6d4);width:0"></div></div><span class="lang-bar-pct">78.5%</span></div>
+          <div class="lang-bar-row"><span class="lang-bar-name">C</span><div class="lang-bar-track"><div class="lang-bar-fill" data-width="18.2%" style="background:linear-gradient(90deg,#10b981,#06b6d4);width:0"></div></div><span class="lang-bar-pct">18.2%</span></div>
+          <div class="lang-bar-row"><span class="lang-bar-name">Assembly</span><div class="lang-bar-track"><div class="lang-bar-fill" data-width="1.8%" style="background:linear-gradient(90deg,#f59e0b,#ef4444);width:0"></div></div><span class="lang-bar-pct">1.8%</span></div>
+          <div class="lang-bar-row"><span class="lang-bar-name">Makefile</span><div class="lang-bar-track"><div class="lang-bar-fill" data-width="1.5%" style="background:linear-gradient(90deg,#8b5cf6,#ec4899);width:0"></div></div><span class="lang-bar-pct">1.5%</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CREATOR -->
+    <div class="reveal" style="margin-bottom:3rem">
+      <div class="section-label" style="margin-bottom:0.75rem">Creator</div>
+      <h2 style="font-size:1.6rem;font-weight:800;margin-bottom:1.5rem">The Person Behind 7-Zip</h2>
+      <div class="card" style="background:linear-gradient(135deg,rgba(59,130,246,0.08),rgba(6,182,212,0.04));border-color:rgba(59,130,246,0.2);max-width:640px">
+        <div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap">
+          <div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#06b6d4);display:flex;align-items:center;justify-content:center;font-size:2rem;flex-shrink:0">👨‍💻</div>
+          <div>
+            <div style="font-size:1.35rem;font-weight:800;margin-bottom:0.25rem">Igor Pavlov</div>
+            <div style="color:var(--primary);font-size:0.875rem;font-weight:600;margin-bottom:0.5rem">Creator & Lead Developer</div>
+            <p style="color:var(--text-muted);font-size:0.875rem;line-height:1.7">Igor Pavlov created 7-Zip and the LZMA algorithm. He has been developing and maintaining 7-Zip since 1999, making it one of the most enduring and respected open-source projects in the compression space.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:0.75rem;margin-top:1.25rem;flex-wrap:wrap">
+          <a href="https://github.com/ip7z" target="_blank" class="btn btn-secondary btn-sm" id="igorGhLink">GitHub Profile →</a>
+          <a href="https://sourceforge.net/u/ip7z/profile/" target="_blank" class="btn btn-secondary btn-sm" id="igorSfLink">SourceForge →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTRIBUTORS -->
+    <div class="reveal" style="margin-bottom:3rem">
+      <div class="section-label" style="margin-bottom:0.75rem">Contributors</div>
+      <h2 style="font-size:1.6rem;font-weight:800;margin-bottom:0.75rem">Community Contributors</h2>
+      <p style="color:var(--text-dim);font-size:0.9rem;margin-bottom:1.5rem">These individuals have contributed issues, pull requests, translations, bug reports, and more to the 7-Zip project.</p>
+      <div class="contributor-grid">
+        <!-- Localization Contributors -->
+        <div class="contrib-card">
+          <div class="contrib-avatar">🇨🇳</div>
+          <div><div class="contrib-name">Chinese (Simplified)</div><div class="contrib-role">Localization · sparanoid.com</div></div>
+        </div>
+        <div class="contrib-card">
+          <div class="contrib-avatar">🇹🇼</div>
+          <div><div class="contrib-name">Chinese (Traditional)</div><div class="contrib-role">Localization · developershome.com</div></div>
+        </div>
+        <div class="contrib-card">
+          <div class="contrib-avatar">🇫🇷</div>
+          <div><div class="contrib-name">French Translation</div><div class="contrib-role">Localization · 7-zip.fr</div></div>
+        </div>
+        <div class="contrib-card">
+          <div class="contrib-avatar">🇩🇪</div>
+          <div><div class="contrib-name">German Translation</div><div class="contrib-role">Localization · 7-zip.de</div></div>
+        </div>
+        <div class="contrib-card">
+          <div class="contrib-avatar">🇯🇵</div>
+          <div><div class="contrib-name">Japanese Translation</div><div class="contrib-role">Localization · 7-zip.opensource.jp</div></div>
+        </div>
+        <div class="contrib-card">
+          <div class="contrib-avatar">🇧🇷</div>
+          <div><div class="contrib-name">Portuguese (Brazil)</div><div class="contrib-role">Localization · rnbastos.com</div></div>
+        </div>
+        <div class="contrib-card">
+          <div class="contrib-avatar">🇪🇸</div>
+          <div><div class="contrib-name">Spanish Translation</div><div class="contrib-role">Localization · updatestar.com</div></div>
+        </div>
+        <div class="contrib-card">
+          <div class="contrib-avatar">🇹🇭</div>
+          <div><div class="contrib-name">Thai Translation</div><div class="contrib-role">Localization · inetbridge.net</div></div>
+        </div>
+        <div class="contrib-card">
+          <div class="contrib-avatar">🇻🇳</div>
+          <div><div class="contrib-name">Vietnamese Translation</div><div class="contrib-role">Localization · updatestar.com</div></div>
+        </div>
+        <div class="contrib-card">
+          <div class="contrib-avatar">🌍</div>
+          <div><div class="contrib-name">Esperanto Translation</div><div class="contrib-role">Localization · rnbastos.com</div></div>
+        </div>
+        <!-- SDK / Port contributors -->
+        <div class="contrib-card">
+          <div class="contrib-avatar">☕</div>
+          <div><div class="contrib-name">p7zip Port</div><div class="contrib-role">Linux/Unix CLI port</div></div>
+        </div>
+        <div class="contrib-card">
+          <div class="contrib-avatar">🔀</div>
+          <div><div class="contrib-name">jinfeihan57</div><div class="contrib-role">p7zip fork with extra codecs</div></div>
+        </div>
+      </div>
+      <div style="margin-top:1.5rem">
+        <a href="https://github.com/ip7z/7zip/graphs/contributors" target="_blank" class="btn btn-secondary btn-sm" id="allContribLink">View All Contributors on GitHub →</a>
+      </div>
+    </div>
+
+    <!-- RELEASES -->
+    <div class="reveal" style="margin-bottom:3rem">
+      <div class="section-label" style="margin-bottom:0.75rem">Releases</div>
+      <h2 style="font-size:1.6rem;font-weight:800;margin-bottom:1.5rem">Release History (GitHub)</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Version</th><th>Status</th><th>Date</th><th>Highlights</th></tr></thead>
+          <tbody>
+            <tr><td><strong>26.01</strong></td><td><span class="badge badge-green">Latest</span></td><td>2026-04-27</td><td>Minor fixes &amp; stability improvements</td></tr>
+            <tr><td>26.00</td><td><span class="badge badge-blue">Stable</span></td><td>2026</td><td>Minor fixes</td></tr>
+            <tr><td>25.01</td><td><span class="badge badge-blue">Stable</span></td><td>2025</td><td>Improved symbolic link security</td></tr>
+            <tr><td>25.00</td><td><span class="badge badge-blue">Stable</span></td><td>2025</td><td>Support for 64+ CPU threads</td></tr>
+            <tr><td>24.09</td><td><span class="badge badge-blue">Stable</span></td><td>2024</td><td>Increased default LZMA dictionary sizes</td></tr>
+            <tr><td>24.05</td><td><span class="badge badge-blue">Stable</span></td><td>2024</td><td>RISC-V filter support</td></tr>
+            <tr><td>23.01</td><td><span class="badge badge-blue">Stable</span></td><td>2023-06-20</td><td>ARM64 filter, improved BCJ2</td></tr>
+            <tr><td>21.07</td><td><span class="badge badge-orange">Older</span></td><td>2021</td><td>Minor changes and fixes</td></tr>
+            <tr><td>21.06</td><td><span class="badge badge-orange">Older</span></td><td>2021</td><td>LZMA encoding bug fix</td></tr>
+            <tr><td>21.03β</td><td><span class="badge badge-orange">Older</span></td><td>2021</td><td>LZMA dict up to 4 GB, speed opts</td></tr>
+            <tr><td>21.02α</td><td><span class="badge badge-orange">Older</span></td><td>2021</td><td>First macOS &amp; Linux support</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top:1rem;text-align:right">
+        <a href="https://github.com/ip7z/7zip/releases" target="_blank" class="btn btn-secondary btn-sm" id="allReleasesLink">All 13 Releases on GitHub →</a>
+      </div>
+    </div>
+
+    <!-- HOW TO CONTRIBUTE -->
+    <div class="reveal">
+      <div class="section-label" style="margin-bottom:0.75rem">Get Involved</div>
+      <h2 style="font-size:1.6rem;font-weight:800;margin-bottom:1.5rem">How to Contribute</h2>
+      <div class="grid-3" style="gap:1.25rem">
+        <div class="card" style="text-align:center;padding:1.75rem 1.25rem">
+          <div style="font-size:2rem;margin-bottom:0.75rem">🐛</div>
+          <div style="font-weight:700;margin-bottom:0.5rem">Report Bugs</div>
+          <p style="color:var(--text-muted);font-size:0.85rem;line-height:1.7;margin-bottom:1rem">Found an issue? Open a bug report on SourceForge or GitHub Issues to help improve 7-Zip.</p>
+          <a href="https://sourceforge.net/p/sevenzip/bugs/" target="_blank" class="btn btn-secondary btn-sm" id="contribBugsLink">Report on SourceForge</a>
+        </div>
+        <div class="card" style="text-align:center;padding:1.75rem 1.25rem">
+          <div style="font-size:2rem;margin-bottom:0.75rem">🌍</div>
+          <div style="font-weight:700;margin-bottom:0.5rem">Translate</div>
+          <p style="color:var(--text-muted);font-size:0.85rem;line-height:1.7;margin-bottom:1rem">Help bring 7-Zip to more users by translating the interface into your language.</p>
+          <a href="https://sourceforge.net/p/sevenzip/discussion/45797/" target="_blank" class="btn btn-secondary btn-sm" id="contribTranslateLink">Contact on Forum</a>
+        </div>
+        <div class="card" style="text-align:center;padding:1.75rem 1.25rem">
+          <div style="font-size:2rem;margin-bottom:0.75rem">🔀</div>
+          <div style="font-weight:700;margin-bottom:0.5rem">Pull Requests</div>
+          <p style="color:var(--text-muted);font-size:0.85rem;line-height:1.7;margin-bottom:1rem">Submit code improvements or fixes via GitHub Pull Requests. There are currently 20 open PRs.</p>
+          <a href="https://github.com/ip7z/7zip/pulls" target="_blank" class="btn btn-secondary btn-sm" id="contribPRLink">View Pull Requests</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand"><div style="font-size:1.2rem;font-weight:800;background:linear-gradient(135deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">7-Zip</div><p>Free and open-source file archiver. Copyright &copy; 2026 Igor Pavlov.</p></div>
+      <div class="footer-col"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="download.html">Download</a></li><li><a href="7z.html">7z Format</a></li><li><a href="sdk.html">LZMA SDK</a></li></ul></div>
+      <div class="footer-col"><h4>Help</h4><ul><li><a href="faq.html">FAQ</a></li><li><a href="support.html">Support</a></li><li><a href="links.html">Links</a></li><li><a href="contributors.html">Community</a></li></ul></div>
+      <div class="footer-col"><h4>External</h4><ul><li><a href="https://github.com/ip7z/7zip" target="_blank">GitHub</a></li><li><a href="https://sourceforge.net/projects/sevenzip/" target="_blank">SourceForge</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>Copyright &copy; 2026 Igor Pavlov. 7-Zip is free software distributed under the GNU LGPL.</p></div>
+  </div>
+</footer>
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
+<script src="script.js"></script>
+<script>
+// Animate language bars on scroll
+const bars = document.querySelectorAll('#langBars .lang-bar-fill');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting) {
+      bars.forEach(b => b.style.width = b.dataset.width);
+      obs.unobserve(e.target);
+    }
+  });
+}, {threshold:0.3});
+const langSection = document.getElementById('langBars');
+if(langSection) obs.observe(langSection);
+
+// Reveal animations
+const revObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('revealed');revObs.unobserve(e.target);} });
+},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
+</script>
+</body>
+</html>

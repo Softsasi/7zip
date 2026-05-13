@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Download 7-Zip – All Versions & Platforms</title>
+<meta name="description" content="Download 7-Zip for Windows, Linux, and macOS. Get the latest 7-Zip 26.01 installer for x64, x86, ARM64, and more.">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="https://www.7-zip.org/favicon.ico">
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html" class="nav-brand">
+    <img src="7zip-logo.png" alt="7-Zip Logo" onerror="this.style.display='none'">
+    <span class="brand-name">7-Zip</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="download.html" class="active">Download</a></li>
+    <li><a href="7z.html">7z Format</a></li>
+    <li><a href="sdk.html">LZMA SDK</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="support.html">Support</a></li>
+    <li><a href="links.html">Links</a></li>
+    <li><a href="contributors.html">Community</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:0.75rem">
+    <div class="lang-dropdown" id="langDropdown">
+      <button class="lang-btn">🌐 English <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="lang-menu">
+        <a href="download.html" class="current">🇬🇧 English</a>
+        <a href="https://sparanoid.com/lab/7z/" target="_blank">🇨🇳 Chinese (Simplified)</a>
+        <a href="https://www.developershome.com/7-zip/" target="_blank">🇹🇼 Chinese (Traditional)</a>
+        <a href="https://7zip-eo.rnbastos.com/" target="_blank">🌍 Esperanto</a>
+        <a href="https://www.7-zip.fr/" target="_blank">🇫🇷 French</a>
+        <a href="https://www.7-zip.de/" target="_blank">🇩🇪 German</a>
+        <a href="https://7-zip.opensource.jp/" target="_blank">🇯🇵 Japanese</a>
+        <a href="https://7zip.rnbastos.com/" target="_blank">🇧🇷 Portuguese (Brazil)</a>
+        <a href="https://7zip-es.updatestar.com/" target="_blank">🇪🇸 Spanish</a>
+        <a href="https://7zip-thai.inetbridge.net/" target="_blank">🇹🇭 Thai</a>
+        <a href="https://7zip-vi.updatestar.com/" target="_blank">🇻🇳 Vietnamese</a>
+      </div>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="section-label">Downloads</div>
+  <h1>Download 7-Zip</h1>
+  <p>Get the latest release for your operating system. All versions are free and open source.</p>
+</div>
+
+<section style="padding:3rem 1.5rem 5rem">
+  <div class="container">
+
+    <!-- LATEST RELEASE HIGHLIGHT -->
+    <div style="background:linear-gradient(135deg,rgba(59,130,246,0.1),rgba(6,182,212,0.06));border:1px solid rgba(59,130,246,0.25);border-radius:16px;padding:2rem;margin-bottom:3rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem">
+      <div>
+        <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--primary);margin-bottom:0.5rem">Latest Release</div>
+        <div style="font-size:2rem;font-weight:900;margin-bottom:0.25rem">7-Zip 26.01</div>
+        <div style="color:var(--text-muted);font-size:0.9rem">Released April 27, 2026 — Recommended for all users</div>
+      </div>
+      <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
+        <a href="https://github.com/ip7z/7zip/releases/download/26.01/7z2601-x64.exe" class="btn btn-primary" id="dlLatestWin">⬇ Windows x64 (.exe)</a>
+        <a href="https://github.com/ip7z/7zip/releases/latest" target="_blank" class="btn btn-secondary btn-sm">All Platforms on GitHub →</a>
+      </div>
+    </div>
+
+    <!-- WINDOWS -->
+    <div class="dl-section">
+      <div class="dl-section-title">🪟 Windows — 7-Zip 26.01</div>
+      <p style="color:var(--text-muted);font-size:0.875rem;margin-bottom:1.25rem">We recommend the <strong style="color:var(--text)">EXE installer</strong> instead of MSI. Choose your architecture below.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Architecture</th><th>Type</th><th>Description</th><th>Download</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="badge badge-blue">x64 (64-bit)</span></td><td>EXE Installer</td><td>Recommended for most users</td><td><a href="https://github.com/ip7z/7zip/releases/download/26.01/7z2601-x64.exe" class="btn btn-green btn-sm" id="dlWin64exe">⬇ 7z2601-x64.exe</a></td></tr>
+            <tr><td><span class="badge badge-orange">x86 (32-bit)</span></td><td>EXE Installer</td><td>For older 32-bit Windows systems</td><td><a href="https://github.com/ip7z/7zip/releases/download/26.01/7z2601.exe" class="btn btn-secondary btn-sm" id="dlWin32exe">⬇ 7z2601.exe</a></td></tr>
+            <tr><td><span class="badge badge-purple">ARM64</span></td><td>EXE Installer</td><td>For Windows ARM64 devices</td><td><a href="https://github.com/ip7z/7zip/releases/download/26.01/7z2601-arm64.exe" class="btn btn-secondary btn-sm" id="dlWinArm64exe">⬇ 7z2601-arm64.exe</a></td></tr>
+            <tr><td><span class="badge badge-blue">x64 (64-bit)</span></td><td>MSI Installer</td><td>For enterprise deployments</td><td><a href="https://github.com/ip7z/7zip/releases/download/26.01/7z2601-x64.msi" class="btn btn-secondary btn-sm" id="dlWin64msi">⬇ 7z2601-x64.msi</a></td></tr>
+            <tr><td><span class="badge badge-orange">x86 (32-bit)</span></td><td>MSI Installer</td><td>MSI for 32-bit systems</td><td><a href="https://github.com/ip7z/7zip/releases/download/26.01/7z2601.msi" class="btn btn-secondary btn-sm" id="dlWin32msi">⬇ 7z2601.msi</a></td></tr>
+            <tr><td>Any</td><td>Extra</td><td>Additional tools and plugins</td><td><a href="https://github.com/ip7z/7zip/releases/download/26.01/7z2601-extra.7z" class="btn btn-secondary btn-sm" id="dlWinExtra">⬇ 7z2601-extra.7z</a></td></tr>
+            <tr><td>Any</td><td>Console</td><td>Standalone console 7-Zip (no install)</td><td><a href="https://github.com/ip7z/7zip/releases/download/26.01/7zr.exe" class="btn btn-secondary btn-sm" id="dlWinConsole">⬇ 7zr.exe</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- LINUX -->
+    <div class="dl-section">
+      <div class="dl-section-title">🐧 Linux — 7-Zip 26.01</div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Architecture</th><th>Format</th><th>Download</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="badge badge-blue">x64 (64-bit)</span></td><td>tar.xz</td><td><a href="https://github.com/ip7z/7zip/releases/download/26.01/7z2601-linux-x64.tar.xz" class="btn btn-green btn-sm" id="dlLinux64">⬇ 7z2601-linux-x64.tar.xz</a></td></tr>
+            <tr><td><span class="badge badge-orange">x86 (32-bit)</span></td><td>tar.xz</td><td><a href="https://github.com/ip7z/7zip/releases/download/26.01/7z2601-linux-x86.tar.xz" class="btn btn-secondary btn-sm" id="dlLinux32">⬇ 7z2601-linux-x86.tar.xz</a></td></tr>
+            <tr><td><span class="badge badge-purple">ARM64</span></td><td>tar.xz</td><td><a href="https://github.com/ip7z/7zip/releases/download/26.01/7z2601-linux-arm64.tar.xz" class="btn btn-secondary btn-sm" id="dlLinuxArm64">⬇ 7z2601-linux-arm64.tar.xz</a></td></tr>
+            <tr><td><span class="badge badge-green">ARM</span></td><td>tar.xz</td><td><a href="https://github.com/ip7z/7zip/releases/download/26.01/7z2601-linux-arm.tar.xz" class="btn btn-secondary btn-sm" id="dlLinuxArm">⬇ 7z2601-linux-arm.tar.xz</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- MACOS -->
+    <div class="dl-section">
+      <div class="dl-section-title">🍎 macOS — 7-Zip 26.01</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Platform</th><th>Format</th><th>Download</th></tr></thead>
+          <tbody>
+            <tr><td>macOS (Universal)</td><td>tar.xz</td><td><a href="https://github.com/ip7z/7zip/releases/download/26.01/7z2601-mac.tar.xz" class="btn btn-green btn-sm" id="dlMacMain">⬇ 7z2601-mac.tar.xz</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- SOURCE CODE -->
+    <div class="dl-section">
+      <div class="dl-section-title">📦 Source Code — 7-Zip 26.01</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Format</th><th>Download</th></tr></thead>
+          <tbody>
+            <tr><td>Source code (.7z)</td><td><a href="https://github.com/ip7z/7zip/releases/download/26.01/7z2601-src.7z" class="btn btn-secondary btn-sm" id="dlSrc7z">⬇ 7z2601-src.7z</a></td></tr>
+            <tr><td>Source code (.tar.xz)</td><td><a href="https://github.com/ip7z/7zip/releases/download/26.01/7z2601-src.tar.xz" class="btn btn-secondary btn-sm" id="dlSrcTar">⬇ 7z2601-src.tar.xz</a></td></tr>
+            <tr><td>LZMA SDK (.7z)</td><td><a href="https://github.com/ip7z/7zip/releases/download/26.01/lzma2601.7z" class="btn btn-secondary btn-sm" id="dlLzmaSdk">⬇ lzma2601.7z</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- OLDER VERSIONS -->
+    <div class="dl-section">
+      <div class="dl-section-title">🗂️ Older Stable Releases</div>
+      <div class="grid-3" style="gap:1rem">
+        <div class="card">
+          <div style="font-weight:700;margin-bottom:0.35rem">7-Zip 23.01 <span class="badge badge-blue" style="font-size:0.7rem">2023-06-20</span></div>
+          <div style="color:var(--text-muted);font-size:0.8rem;margin-bottom:1rem">Previous stable release</div>
+          <div style="display:flex;flex-direction:column;gap:0.5rem">
+            <a href="https://www.7-zip.org/a/7z2301-x64.exe" class="btn btn-secondary btn-sm" id="dlOld2301x64">⬇ Windows x64</a>
+            <a href="https://www.7-zip.org/a/7z2301.exe" class="btn btn-secondary btn-sm" id="dlOld2301x86">⬇ Windows x86</a>
+            <a href="https://www.7-zip.org/a/7z2301-linux-x64.tar.xz" class="btn btn-secondary btn-sm" id="dlOld2301linux">⬇ Linux x64</a>
+          </div>
+        </div>
+        <div class="card">
+          <div style="font-weight:700;margin-bottom:0.35rem">7-Zip 19.00 <span class="badge badge-orange" style="font-size:0.7rem">2019-02-21</span></div>
+          <div style="color:var(--text-muted);font-size:0.8rem;margin-bottom:1rem">Legacy Windows version</div>
+          <div style="display:flex;flex-direction:column;gap:0.5rem">
+            <a href="https://www.7-zip.org/a/7z1900-x64.exe" class="btn btn-secondary btn-sm" id="dlOld1900x64">⬇ Windows x64</a>
+            <a href="https://www.7-zip.org/a/7z1900.exe" class="btn btn-secondary btn-sm" id="dlOld1900x86">⬇ Windows x86</a>
+          </div>
+        </div>
+        <div class="card">
+          <div style="font-weight:700;margin-bottom:0.35rem">7-Zip 9.20 <span class="badge badge-orange" style="font-size:0.7rem">2010-11-18</span></div>
+          <div style="color:var(--text-muted);font-size:0.8rem;margin-bottom:1rem">Historic release for legacy systems</div>
+          <div style="display:flex;flex-direction:column;gap:0.5rem">
+            <a href="https://www.7-zip.org/a/7z920.exe" class="btn btn-secondary btn-sm" id="dlOld920">⬇ Windows x86</a>
+            <a href="https://www.7-zip.org/a/7z920-x64.msi" class="btn btn-secondary btn-sm" id="dlOld920x64msi">⬇ Windows x64 MSI</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- THIRD PARTY -->
+    <div class="dl-section">
+      <div class="dl-section-title">🌐 Third-Party &amp; Repository Links</div>
+      <div class="grid-2" style="gap:1rem">
+        <div class="card">
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.75rem">Linux Package Managers</h3>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem">
+            <li><a href="https://packages.debian.org/sid/p7zip-full" target="_blank" style="color:var(--primary);font-size:0.875rem;text-decoration:none">📦 p7zip for Debian / Ubuntu</a></li>
+            <li><a href="https://packages.gentoo.org/packages/app-arch/p7zip" target="_blank" style="color:var(--primary);font-size:0.875rem;text-decoration:none">📦 p7zip for Gentoo</a></li>
+            <li><a href="https://www.freshports.org/archivers/p7zip/" target="_blank" style="color:var(--primary);font-size:0.875rem;text-decoration:none">📦 p7zip for FreeBSD</a></li>
+            <li><a href="https://www.opencsw.org/packages/p7zip/" target="_blank" style="color:var(--primary);font-size:0.875rem;text-decoration:none">📦 p7zip for Solaris</a></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.75rem">Other Platforms</h3>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem">
+            <li><a href="https://www.keka.io/en/" target="_blank" style="color:var(--primary);font-size:0.875rem;text-decoration:none">🍎 Keka – Free Mac OS X file archiver</a></li>
+            <li><a href="https://sourceforge.net/projects/sevenzip/files/" target="_blank" style="color:var(--primary);font-size:0.875rem;text-decoration:none">📁 All versions on SourceForge</a></li>
+            <li><a href="https://github.com/ip7z/7zip/releases" target="_blank" style="color:var(--primary);font-size:0.875rem;text-decoration:none">🐙 All releases on GitHub</a></li>
+            <li><a href="http://portableapps.com/apps/utilities/7-zip_portable" target="_blank" style="color:var(--primary);font-size:0.875rem;text-decoration:none">💾 7-Zip Portable (PortableApps)</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="font-size:1.2rem;font-weight:800;background:linear-gradient(135deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">7-Zip</div>
+        <p>Free and open-source file archiver. Copyright &copy; 2026 Igor Pavlov.</p>
+      </div>
+      <div class="footer-col"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="download.html">Download</a></li><li><a href="7z.html">7z Format</a></li><li><a href="sdk.html">LZMA SDK</a></li></ul></div>
+      <div class="footer-col"><h4>Help</h4><ul><li><a href="faq.html">FAQ</a></li><li><a href="support.html">Support</a></li><li><a href="links.html">Links</a></li><li><a href="contributors.html">Community</a></li></ul></div>
+      <div class="footer-col"><h4>External</h4><ul><li><a href="https://github.com/ip7z/7zip" target="_blank">GitHub</a></li><li><a href="https://sourceforge.net/projects/sevenzip/" target="_blank">SourceForge</a></li><li><a href="https://7-max.com" target="_blank">7-max</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright &copy; 2026 Igor Pavlov. 7-Zip is free software distributed under the GNU LGPL.</p>
+    </div>
+  </div>
+</footer>
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
+<script src="script.js"></script>
+</body>
+</html>

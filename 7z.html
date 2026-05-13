@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>7z Format – 7-Zip</title>
+<meta name="description" content="Learn about the 7z archive format – open architecture, high compression, AES-256 encryption, and more.">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="https://www.7-zip.org/favicon.ico">
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html" class="nav-brand"><img src="7zip-logo.png" alt="7-Zip Logo" onerror="this.style.display='none'"><span class="brand-name">7-Zip</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li><li><a href="download.html">Download</a></li>
+    <li><a href="7z.html" class="active">7z Format</a></li><li><a href="sdk.html">LZMA SDK</a></li>
+    <li><a href="faq.html">FAQ</a></li><li><a href="support.html">Support</a></li>
+    <li><a href="links.html">Links</a></li><li><a href="contributors.html">Community</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:0.75rem">
+    <div class="lang-dropdown" id="langDropdown">
+      <button class="lang-btn">🌐 English <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="lang-menu">
+        <a href="7z.html" class="current">🇬🇧 English</a>
+        <a href="https://sparanoid.com/lab/7z/" target="_blank">🇨🇳 Chinese (Simplified)</a>
+        <a href="https://www.7-zip.fr/" target="_blank">🇫🇷 French</a>
+        <a href="https://www.7-zip.de/" target="_blank">🇩🇪 German</a>
+        <a href="https://7-zip.opensource.jp/" target="_blank">🇯🇵 Japanese</a>
+        <a href="https://7zip-es.updatestar.com/" target="_blank">🇪🇸 Spanish</a>
+      </div>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="section-label">Archive Format</div>
+  <h1>7z Format</h1>
+  <p>A modern, open archive format providing exceptional compression ratios with strong encryption support.</p>
+</div>
+
+<section style="padding:3rem 1.5rem 5rem">
+  <div class="container">
+    <div class="grid-2" style="gap:2.5rem;align-items:start">
+      <div class="prose">
+        <h2>What is 7z?</h2>
+        <p>7z is a modern archive format with an open architecture, providing a high compression ratio. It was introduced as the native format for 7-Zip and has since become widely adopted for its flexibility and performance.</p>
+
+        <h2>Key Features</h2>
+        <div class="grid-2" style="gap:1rem;margin:1.25rem 0">
+          <div class="card" style="padding:1.1rem">
+            <div style="font-size:1.25rem;margin-bottom:0.4rem">🏗️</div>
+            <div style="font-weight:700;font-size:0.9rem;margin-bottom:0.25rem">Open Architecture</div>
+            <div style="color:var(--text-muted);font-size:0.8rem">Any new compression method can be added without changing the format specification.</div>
+          </div>
+          <div class="card" style="padding:1.1rem">
+            <div style="font-size:1.25rem;margin-bottom:0.4rem">🗜️</div>
+            <div style="font-weight:700;font-size:0.9rem;margin-bottom:0.25rem">High Compression</div>
+            <div style="color:var(--text-muted);font-size:0.8rem">LZMA and LZMA2 deliver industry-leading compression ratios.</div>
+          </div>
+          <div class="card" style="padding:1.1rem">
+            <div style="font-size:1.25rem;margin-bottom:0.4rem">🔐</div>
+            <div style="font-weight:700;font-size:0.9rem;margin-bottom:0.25rem">AES-256 Encryption</div>
+            <div style="color:var(--text-muted);font-size:0.8rem">Strong AES-256 encryption with SHA-256 key derivation to protect your files.</div>
+          </div>
+          <div class="card" style="padding:1.1rem">
+            <div style="font-size:1.25rem;margin-bottom:0.4rem">📁</div>
+            <div style="font-weight:700;font-size:0.9rem;margin-bottom:0.25rem">Huge File Support</div>
+            <div style="color:var(--text-muted);font-size:0.8rem">Supports files up to 16,000,000,000 GB in size.</div>
+          </div>
+          <div class="card" style="padding:1.1rem">
+            <div style="font-size:1.25rem;margin-bottom:0.4rem">🌐</div>
+            <div style="font-weight:700;font-size:0.9rem;margin-bottom:0.25rem">Unicode File Names</div>
+            <div style="color:var(--text-muted);font-size:0.8rem">Full Unicode support for international file names in any language.</div>
+          </div>
+          <div class="card" style="padding:1.1rem">
+            <div style="font-size:1.25rem;margin-bottom:0.4rem">⚡</div>
+            <div style="font-weight:700;font-size:0.9rem;margin-bottom:0.25rem">Solid Compression</div>
+            <div style="color:var(--text-muted);font-size:0.8rem">Solid archive mode compresses multiple files together for better ratios.</div>
+          </div>
+        </div>
+
+        <h2>Compression Methods</h2>
+        <p>7z has an open architecture, so it can support any new compression methods. Currently integrated methods:</p>
+        <div class="table-wrap" style="margin:1rem 0">
+          <table>
+            <thead><tr><th>Method</th><th>Type</th><th>Notes</th></tr></thead>
+            <tbody>
+              <tr><td><code>LZMA</code></td><td>Compression</td><td>Default method – best compression</td></tr>
+              <tr><td><code>LZMA2</code></td><td>Compression</td><td>Multi-threaded improvement on LZMA</td></tr>
+              <tr><td><code>PPMD</code></td><td>Compression</td><td>Excellent for text files</td></tr>
+              <tr><td><code>BCJ</code></td><td>Filter</td><td>Pre-filter for x86 executables</td></tr>
+              <tr><td><code>BCJ2</code></td><td>Filter</td><td>Improved BCJ filter</td></tr>
+              <tr><td><code>Delta</code></td><td>Filter</td><td>For binary data with regular patterns</td></tr>
+              <tr><td><code>AES-256</code></td><td>Encryption</td><td>Military-grade encryption</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>LZMA – The Default Method</h2>
+        <p>LZMA (Lempel–Ziv–Markov chain algorithm) is the default and primary compression method of the 7z format. Key characteristics:</p>
+        <ul>
+          <li>High compression ratio with variable dictionary size (up to 4 GB)</li>
+          <li>Compression speed: approximately 2–8 MB/s on a 4 GHz CPU (2-thread version)</li>
+          <li>Decompression speed: approximately 30–100 MB/s on a 4 GHz CPU</li>
+          <li>Small memory requirements for decompression</li>
+          <li>Small decompression code size: approximately 5 KB</li>
+        </ul>
+
+        <h2>Encryption</h2>
+        <p>7-Zip supports AES-256 encryption. The cipher key (256 bits) is derived from a user-defined text password using a SHA-256-based key derivation function. A large number of iterations makes brute-force attacks computationally expensive.</p>
+
+        <h2>Applications Supporting 7z</h2>
+        <p>Beyond 7-Zip itself, the 7z format is supported by WinRAR, PowerArchiver, TUGZip, IZArc, PeaZip, and many other archiving tools.</p>
+
+        <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap">
+          <a href="download.html" class="btn btn-primary" id="dl7zPage">Download 7-Zip</a>
+          <a href="sdk.html" class="btn btn-secondary" id="lzmaSdkLink">LZMA SDK →</a>
+          <a href="https://en.wikipedia.org/wiki/7z" target="_blank" class="btn btn-secondary" id="wiki7zLink">7z on Wikipedia →</a>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div style="display:flex;flex-direction:column;gap:1.25rem">
+        <div class="card" style="background:linear-gradient(135deg,rgba(59,130,246,0.08),rgba(6,182,212,0.04));border-color:rgba(59,130,246,0.2)">
+          <div style="font-weight:700;margin-bottom:1rem;font-size:1rem">📊 Format Specifications</div>
+          <div style="display:flex;flex-direction:column;gap:0.65rem">
+            <div style="display:flex;justify-content:space-between;font-size:0.875rem"><span style="color:var(--text-muted)">Extension</span><code>.7z</code></div>
+            <div style="display:flex;justify-content:space-between;font-size:0.875rem"><span style="color:var(--text-muted)">Architecture</span><span>Open</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:0.875rem"><span style="color:var(--text-muted)">Max file size</span><span>~16 EB</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:0.875rem"><span style="color:var(--text-muted)">Encryption</span><span>AES-256</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:0.875rem"><span style="color:var(--text-muted)">Unicode</span><span>Yes</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:0.875rem"><span style="color:var(--text-muted)">Solid mode</span><span>Yes</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:0.875rem"><span style="color:var(--text-muted)">Self-extract</span><span>Yes (SFX)</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:0.875rem"><span style="color:var(--text-muted)">License</span><span>GNU LGPL</span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div style="font-weight:700;margin-bottom:0.75rem;font-size:1rem">🔗 Related Links</div>
+          <ul class="link-list">
+            <li><a href="sdk.html">LZMA SDK Documentation</a></li>
+            <li><a href="download.html">Download 7-Zip</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/7z" target="_blank">7z at Wikipedia</a></li>
+            <li><a href="https://github.com/ip7z/7zip" target="_blank">7-Zip on GitHub</a></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div style="font-weight:700;margin-bottom:0.75rem;font-size:1rem">💡 Did You Know?</div>
+          <p style="color:var(--text-muted);font-size:0.875rem;line-height:1.7">For ZIP and GZIP formats, 7-Zip provides <strong style="color:var(--text)">2–10% better</strong> compression ratio than PKZip and WinZip — even using the ZIP format itself!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand"><div style="font-size:1.2rem;font-weight:800;background:linear-gradient(135deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">7-Zip</div><p>Free and open-source file archiver. Copyright &copy; 2026 Igor Pavlov.</p></div>
+      <div class="footer-col"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="download.html">Download</a></li><li><a href="7z.html">7z Format</a></li><li><a href="sdk.html">LZMA SDK</a></li></ul></div>
+      <div class="footer-col"><h4>Help</h4><ul><li><a href="faq.html">FAQ</a></li><li><a href="support.html">Support</a></li><li><a href="links.html">Links</a></li><li><a href="contributors.html">Community</a></li></ul></div>
+      <div class="footer-col"><h4>External</h4><ul><li><a href="https://github.com/ip7z/7zip" target="_blank">GitHub</a></li><li><a href="https://sourceforge.net/projects/sevenzip/" target="_blank">SourceForge</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>Copyright &copy; 2026 Igor Pavlov. 7-Zip is free software distributed under the GNU LGPL.</p></div>
+  </div>
+</footer>
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
+<script src="script.js"></script>
+</body>
+</html>
