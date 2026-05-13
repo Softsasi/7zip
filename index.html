@@ -4,361 +4,206 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>7-Zip – Free & Open Source File Archiver</title>
-<meta name="description" content="7-Zip is a free, open-source file archiver with a high compression ratio. Download the latest version for Windows, Linux, and macOS.">
+<meta name="description" content="7-Zip is a free, open-source file archiver with an ultra-high compression ratio in the 7z format with LZMA/LZMA2 compression.">
+<link rel="canonical" href="https://www.7-zip.org/">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+
+<!-- Open Graph / SEO -->
+<meta property="og:title" content="7-Zip – Free & Open Source File Archiver">
+<meta property="og:description" content="7-Zip is a file archiver with a high compression ratio. Open source, completely free, and built for performance.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.7-zip.org/">
+<meta property="og:image" content="https://www.7-zip.org/7zip-logo.png">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "7-Zip",
+  "operatingSystem": "Windows, Linux, macOS",
+  "applicationCategory": "UtilitiesApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+
 <link rel="stylesheet" href="style.css">
 <link rel="icon" href="https://www.7-zip.org/favicon.ico">
-<style>
-.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease}
-.reveal.revealed{opacity:1;transform:none}
-.format-grid{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.75rem}
-.format-tag{background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.2);color:#93c5fd;font-size:0.75rem;font-weight:600;padding:0.2rem 0.6rem;border-radius:6px;font-family:'JetBrains Mono',monospace}
-.changelog-item{display:flex;gap:1.25rem;padding:1rem 0;border-bottom:1px solid var(--glass-border)}
-.changelog-item:last-child{border-bottom:none}
-.changelog-ver{flex-shrink:0;width:90px}
-.changelog-ver strong{display:block;font-size:0.9rem;font-weight:700;color:var(--text)}
-.changelog-ver span{font-size:0.75rem;color:var(--text-muted)}
-.changelog-desc{color:var(--text-dim);font-size:0.875rem;line-height:1.6}
-</style>
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar" role="navigation" aria-label="Main navigation">
+<div class="bg-mesh"></div>
+
+<nav class="navbar">
   <a href="index.html" class="nav-brand">
-    <img src="7zip-logo.png" alt="7-Zip Logo" onerror="this.style.display='none'">
-    <span class="brand-name">7-Zip</span>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+    <span>7-Zip</span>
   </a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="download.html">Download</a></li>
-    <li><a href="7z.html">7z Format</a></li>
-    <li><a href="sdk.html">LZMA SDK</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-    <li><a href="support.html">Support</a></li>
-    <li><a href="links.html">Links</a></li>
-    <li><a href="contributors.html">Community</a></li>
+  
+  <ul class="nav-links">
+    <li><a href="index.html" class="active" data-i18n="nav_home">Home</a></li>
+    <li><a href="download.html" data-i18n="nav_download">Download</a></li>
+    <li><a href="7z.html" data-i18n="nav_7z">7z Format</a></li>
+    <li><a href="sdk.html" data-i18n="nav_sdk">LZMA SDK</a></li>
+    <li><a href="faq.html" data-i18n="nav_faq">FAQ</a></li>
+    <li><a href="support.html" data-i18n="nav_support">Support</a></li>
+    <li><a href="links.html" data-i18n="nav_links">Links</a></li>
+    <li><a href="contributors.html" data-i18n="nav_community">Community</a></li>
   </ul>
-  <div style="display:flex;align-items:center;gap:0.75rem">
-    <div class="lang-dropdown" id="langDropdown">
-      <button class="lang-btn" aria-label="Select language" id="langBtnMain">
-        🌐 English
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="lang-menu">
-        <a href="index.html" class="current">🇬🇧 English</a>
-        <a href="https://sparanoid.com/lab/7z/" target="_blank">🇨🇳 Chinese (Simplified)</a>
-        <a href="https://www.developershome.com/7-zip/" target="_blank">🇹🇼 Chinese (Traditional)</a>
-        <a href="https://7zip-eo.rnbastos.com/" target="_blank">🌍 Esperanto</a>
-        <a href="https://www.7-zip.fr/" target="_blank">🇫🇷 French</a>
-        <a href="https://www.7-zip.de/" target="_blank">🇩🇪 German</a>
-        <a href="https://7-zip.opensource.jp/" target="_blank">🇯🇵 Japanese</a>
-        <a href="https://7zip.rnbastos.com/" target="_blank">🇧🇷 Portuguese (Brazil)</a>
-        <a href="https://7zip-es.updatestar.com/" target="_blank">🇪🇸 Spanish</a>
-        <a href="https://7zip-thai.inetbridge.net/" target="_blank">🇹🇭 Thai</a>
-        <a href="https://7zip-vi.updatestar.com/" target="_blank">🇻🇳 Vietnamese</a>
-      </div>
-    </div>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
+  
+  <div class="lang-dropdown">
+    <button class="lang-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+      <span id="activeLang">English</span>
+      <svg width="14" height="14" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
     </button>
+    <div class="lang-menu">
+      <button data-lang="en">English</button>
+      <button data-lang="zh-CN">简体中文</button>
+      <button data-lang="zh-TW">繁體中文</button>
+      <button data-lang="hi">हिन्दी</button>
+      <button data-lang="bn">বাংলা</button>
+      <button data-lang="es">Español</button>
+      <button data-lang="pt-BR">Português</button>
+      <button data-lang="ja">日本語</button>
+      <button data-lang="fr">Français</button>
+      <button data-lang="de">Deutsch</button>
+      <button data-lang="th">ไทย</button>
+      <button data-lang="vi">Tiếng Việt</button>
+      <button data-lang="eo">Esperanto</button>
+    </div>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <div class="hero-badge">✦ Version 26.01 — Released April 27, 2026</div>
-    <h1>The World's Most<br><span>Powerful File Archiver</span></h1>
-    <p class="hero-desc">7-Zip is a free and open-source file archiver delivering exceptional compression ratios. No ads, no tracking — just pure compression power.</p>
-    <div class="hero-actions">
-      <a href="download.html" class="btn btn-primary" id="heroDownloadBtn">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Download 7-Zip 26.01
-      </a>
-      <a href="https://github.com/ip7z/7zip" target="_blank" class="btn btn-secondary" id="heroGithubBtn">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-        View on GitHub
-      </a>
-    </div>
-
-    <!-- Stats bar -->
-    <div class="stats-bar">
-      <div class="stat-item"><div class="stat-num"><span>3.1k</span></div><div class="stat-label">GitHub Stars</div></div>
-      <div class="stat-item"><div class="stat-num"><span>306</span></div><div class="stat-label">Forks</div></div>
-      <div class="stat-item"><div class="stat-num"><span>87</span></div><div class="stat-label">Languages</div></div>
-      <div class="stat-item"><div class="stat-num"><span>Free</span></div><div class="stat-label">Always</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- QUICK DOWNLOAD CARDS -->
-<section style="padding:0 1.5rem 4rem">
-  <div class="container">
-    <div class="announce reveal">
-      <span class="announce-icon">🚀</span>
-      <div class="announce-text">
-        <strong>7-Zip 26.01</strong> is now available! Download installers for Windows x64, x86, ARM64, Linux, and macOS below.
-      </div>
-      <a href="download.html" class="btn btn-sm btn-secondary">All Downloads →</a>
-    </div>
-    <div class="grid-3 reveal">
-      <div class="card">
-        <div class="feature-icon">🪟</div>
-        <div class="feature-title">Windows x64</div>
-        <div class="feature-desc" style="margin-bottom:1.1rem">Recommended for most Windows users (64-bit)</div>
-        <a href="https://github.com/ip7z/7zip/releases/download/26.01/7z2601-x64.exe" class="btn btn-primary btn-sm" id="dlWinX64">Download .exe</a>
-      </div>
-      <div class="card">
-        <div class="feature-icon">🐧</div>
-        <div class="feature-title">Linux x64</div>
-        <div class="feature-desc" style="margin-bottom:1.1rem">Native 7-Zip binary for 64-bit Linux systems</div>
-        <a href="https://github.com/ip7z/7zip/releases/download/26.01/7z2601-linux-x64.tar.xz" class="btn btn-primary btn-sm" id="dlLinuxX64">Download .tar.xz</a>
-      </div>
-      <div class="card">
-        <div class="feature-icon">🍎</div>
-        <div class="feature-title">macOS</div>
-        <div class="feature-desc" style="margin-bottom:1.1rem">Universal binary for Apple Mac systems</div>
-        <a href="https://github.com/ip7z/7zip/releases/download/26.01/7z2601-mac.tar.xz" class="btn btn-primary btn-sm" id="dlMac">Download .tar.xz</a>
+<main class="container">
+  <div class="bento-grid">
+    
+    <!-- Hero Box (Span 8/12) -->
+    <div class="bento-card col-span-8 hero-card">
+      <span class="hero-tag" data-i18n="hero_tag">Data Forge Engine</span>
+      <h1 data-i18n="hero_title">Maximum Compression.</h1>
+      <h2 style="color:var(--accent)" data-i18n="hero_subtitle">Zero Compromise.</h2>
+      <p class="text-muted" style="font-size: 1.1rem; max-width: 500px; margin-bottom: 2rem;" data-i18n="hero_desc">
+        7-Zip is a file archiver with a high compression ratio. Open source, completely free, and built for performance.
+      </p>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <a href="download.html" class="btn btn-primary" data-i18n="btn_download_primary">Download 7-Zip</a>
+        <a href="https://github.com/ip7z/7zip" target="_blank" class="btn btn-secondary">
+          <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          <span data-i18n="btn_github">View on GitHub</span>
+        </a>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- FEATURES -->
-<section style="padding:4rem 1.5rem">
-  <div class="container">
-    <div class="reveal" style="margin-bottom:3rem">
-      <div class="section-label">Why 7-Zip?</div>
-      <h2 class="section-title">Main Features</h2>
-      <p class="section-desc">Everything you need for file compression — powerful, secure, and completely free.</p>
-    </div>
-    <div class="grid-3 reveal">
-      <div class="card">
-        <div class="feature-icon">🗜️</div>
-        <div class="feature-title">Ultra-High Compression</div>
-        <div class="feature-desc">2–10% better compression than PKZip and WinZip for ZIP and GZIP formats. LZMA and LZMA2 deliver the best ratios for 7z archives.</div>
+    
+    <!-- Visualizer Box (Span 4/12) -->
+    <div class="bento-card col-span-4" style="display:flex; flex-direction:column; justify-content:center;">
+      <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom: 1rem;">
+        <svg style="color:var(--accent)" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+        <h3 style="font-size:1.1rem">LZMA2 Engine</h3>
       </div>
-      <div class="card">
-        <div class="feature-icon">🔐</div>
-        <div class="feature-title">AES-256 Encryption</div>
-        <div class="feature-desc">Strong AES-256 encryption for 7z and ZIP formats with SHA-256-based key derivation. Your data stays private and secure.</div>
-      </div>
-      <div class="card">
-        <div class="feature-icon">📦</div>
-        <div class="feature-title">Wide Format Support</div>
-        <div class="feature-desc">Pack &amp; unpack 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM. Open 50+ other formats including RAR, ISO, DMG, CAB, MSI and more.</div>
-      </div>
-      <div class="card">
-        <div class="feature-icon">⚡</div>
-        <div class="feature-title">Self-Extracting Archives</div>
-        <div class="feature-desc">Create self-extracting .exe files from 7z archives — perfect for distributing software without requiring 7-Zip to be installed.</div>
-      </div>
-      <div class="card">
-        <div class="feature-icon">🖥️</div>
-        <div class="feature-title">Powerful File Manager</div>
-        <div class="feature-desc">Built-in file manager with Windows Shell integration. Manage archives directly from the right-click context menu.</div>
-      </div>
-      <div class="card">
-        <div class="feature-icon">💻</div>
-        <div class="feature-title">Command Line Version</div>
-        <div class="feature-desc">Full-featured command-line interface for automation and scripting. Available on Windows, Linux, and macOS.</div>
-      </div>
-      <div class="card">
-        <div class="feature-icon">🌍</div>
-        <div class="feature-title">87 Languages</div>
-        <div class="feature-desc">Localized into 87 languages by contributors worldwide, making 7-Zip accessible to users across the globe.</div>
-      </div>
-      <div class="card">
-        <div class="feature-icon">📄</div>
-        <div class="feature-title">Open Source & Free</div>
-        <div class="feature-desc">GNU LGPL licensed. Use it on any computer, including in commercial organizations. No registration, no payment, no restrictions.</div>
-      </div>
-      <div class="card">
-        <div class="feature-icon">🔌</div>
-        <div class="feature-title">Plugin for FAR Manager</div>
-        <div class="feature-desc">Native FAR Manager plugin for seamless integration with one of the most popular file managers for power users.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FORMAT SUPPORT -->
-<section style="padding:4rem 1.5rem;background:linear-gradient(180deg,transparent,rgba(59,130,246,0.03),transparent)">
-  <div class="container reveal">
-    <div class="section-label">Archive Formats</div>
-    <h2 class="section-title">Supported Formats</h2>
-    <div class="grid-2" style="margin-top:2rem;gap:2rem">
-      <div class="card">
-        <h3 style="font-size:1rem;font-weight:700;margin-bottom:1rem;color:var(--green)">📤 Pack &amp; Unpack</h3>
-        <div class="format-grid">
-          <span class="format-tag">7z</span><span class="format-tag">XZ</span><span class="format-tag">BZIP2</span>
-          <span class="format-tag">GZIP</span><span class="format-tag">TAR</span><span class="format-tag">ZIP</span><span class="format-tag">WIM</span>
+      <p class="text-muted" style="font-size:0.85rem">Real-time compression emulation</p>
+      
+      <div class="visualizer">
+        <div class="vis-row">
+          <div class="vis-label mono">Raw.iso</div>
+          <div class="vis-bar-wrapper"><div class="vis-bar bar-uncompressed"></div></div>
+          <div class="vis-val mono">100MB</div>
         </div>
-      </div>
-      <div class="card">
-        <h3 style="font-size:1rem;font-weight:700;margin-bottom:1rem;color:var(--primary)">📥 Unpack Only</h3>
-        <div class="format-grid">
-          <span class="format-tag">APFS</span><span class="format-tag">AR</span><span class="format-tag">ARJ</span>
-          <span class="format-tag">CAB</span><span class="format-tag">CHM</span><span class="format-tag">CPIO</span>
-          <span class="format-tag">CramFS</span><span class="format-tag">DMG</span><span class="format-tag">EXT</span>
-          <span class="format-tag">FAT</span><span class="format-tag">GPT</span><span class="format-tag">HFS</span>
-          <span class="format-tag">ISO</span><span class="format-tag">LZH</span><span class="format-tag">MBR</span>
-          <span class="format-tag">MSI</span><span class="format-tag">NTFS</span><span class="format-tag">QCOW2</span>
-          <span class="format-tag">RAR</span><span class="format-tag">RPM</span><span class="format-tag">SquashFS</span>
-          <span class="format-tag">UDF</span><span class="format-tag">VDI</span><span class="format-tag">VHD</span>
-          <span class="format-tag">VHDX</span><span class="format-tag">VMDK</span><span class="format-tag">XAR</span><span class="format-tag">Z</span>
+        <div class="vis-row">
+          <div class="vis-label mono text-accent">Archive.7z</div>
+          <div class="vis-bar-wrapper"><div class="vis-bar bar-compressed" id="visCompBar"></div></div>
+          <div class="vis-val mono text-accent" id="visValOut">100MB</div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- COMPATIBILITY -->
-<section style="padding:4rem 1.5rem">
-  <div class="container">
-    <div class="reveal" style="margin-bottom:2rem">
-      <div class="section-label">Compatibility</div>
-      <h2 class="section-title">Works Everywhere</h2>
+    
+    <!-- Stat 1 -->
+    <div class="bento-card col-span-4">
+      <div class="stat-num">30<span style="font-size:1.5rem">%</span></div>
+      <h3 style="margin-bottom:0.25rem" data-i18n="stat_1_title">High Compression</h3>
+      <p class="text-muted" style="font-size:0.85rem" data-i18n="stat_1_desc">In LZMA/LZMA2 format</p>
     </div>
-    <div class="grid-4 reveal">
-      <div class="card" style="text-align:center">
-        <div style="font-size:2.5rem;margin-bottom:0.75rem">🪟</div>
-        <div style="font-weight:700;margin-bottom:0.5rem">Windows</div>
-        <div style="font-size:0.8rem;color:var(--text-muted)">11 / 10 / 8 / 7 / Vista / XP<br>Server 2022–2000</div>
-      </div>
-      <div class="card" style="text-align:center">
-        <div style="font-size:2.5rem;margin-bottom:0.75rem">🐧</div>
-        <div style="font-weight:700;margin-bottom:0.5rem">Linux</div>
-        <div style="font-size:0.8rem;color:var(--text-muted)">x64 · x86<br>ARM64 · ARM</div>
-      </div>
-      <div class="card" style="text-align:center">
-        <div style="font-size:2.5rem;margin-bottom:0.75rem">🍎</div>
-        <div style="font-weight:700;margin-bottom:0.5rem">macOS</div>
-        <div style="font-size:0.8rem;color:var(--text-muted)">Universal binary<br>Intel &amp; Apple Silicon</div>
-      </div>
-      <div class="card" style="text-align:center">
-        <div style="font-size:2.5rem;margin-bottom:0.75rem">⚙️</div>
-        <div style="font-weight:700;margin-bottom:0.5rem">ARM64</div>
-        <div style="font-size:0.8rem;color:var(--text-muted)">Windows ARM64<br>Linux ARM64</div>
-      </div>
+    
+    <!-- Stat 2 -->
+    <div class="bento-card col-span-4">
+      <div class="stat-num"><span class="count-up" data-target="87">0</span></div>
+      <h3 style="margin-bottom:0.25rem" data-i18n="stat_2_title">Formats Supported</h3>
+      <p class="text-muted" style="font-size:0.85rem" data-i18n="stat_2_desc">Packing / Unpacking</p>
     </div>
-  </div>
-</section>
-
-<!-- CHANGELOG -->
-<section style="padding:4rem 1.5rem">
-  <div class="container reveal">
-    <div class="section-label">What's New</div>
-    <h2 class="section-title" style="margin-bottom:2rem">Recent Releases</h2>
-    <div class="card">
-      <div class="changelog-item">
-        <div class="changelog-ver"><strong>26.01</strong><span>2026-04-27</span></div>
-        <div class="changelog-desc">Some minor fixes and stability improvements.</div>
-      </div>
-      <div class="changelog-item">
-        <div class="changelog-ver"><strong>26.00</strong><span>2026-03</span></div>
-        <div class="changelog-desc">Some minor fixes.</div>
-      </div>
-      <div class="changelog-item">
-        <div class="changelog-ver"><strong>25.01</strong><span>2025</span></div>
-        <div class="changelog-desc">The code for handling symbolic links has been changed to provide greater security when extracting files from archives.</div>
-      </div>
-      <div class="changelog-item">
-        <div class="changelog-ver"><strong>25.00</strong><span>2025</span></div>
-        <div class="changelog-desc">7-Zip for Windows can now use more than 64 CPU threads for compression.</div>
-      </div>
-      <div class="changelog-item">
-        <div class="changelog-ver"><strong>24.09</strong><span>2024</span></div>
-        <div class="changelog-desc">The default dictionary size values for LZMA/LZMA2 compression methods were increased.</div>
-      </div>
-      <div class="changelog-item">
-        <div class="changelog-ver"><strong>24.05</strong><span>2024</span></div>
-        <div class="changelog-desc">New filter for RISC-V executables.</div>
-      </div>
-      <div class="changelog-item">
-        <div class="changelog-ver"><strong>23.01</strong><span>2023-06-20</span></div>
-        <div class="changelog-desc">New filter for ARM64 executables. BCJ2 filter improved for better compression ratio. Bug fixes.</div>
-      </div>
+    
+    <!-- Stat 3 -->
+    <div class="bento-card col-span-4">
+      <div class="stat-num">1.5<span style="font-size:1.5rem">MB</span></div>
+      <h3 style="margin-bottom:0.25rem" data-i18n="stat_3_title">Tiny Footprint</h3>
+      <p class="text-muted" style="font-size:0.85rem" data-i18n="stat_3_desc">Resource efficient</p>
     </div>
-    <div style="margin-top:1rem;text-align:right">
-      <a href="https://www.7-zip.org/history.txt" target="_blank" class="btn btn-secondary btn-sm">Full Change History →</a>
-    </div>
-  </div>
-</section>
-
-<!-- LICENSE -->
-<section style="padding:4rem 1.5rem">
-  <div class="container reveal">
-    <div class="card" style="background:linear-gradient(135deg,rgba(59,130,246,0.06),rgba(6,182,212,0.04));border-color:rgba(59,130,246,0.2)">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem">
+    
+    <!-- Features (Span 12) -->
+    <div class="bento-card col-span-12">
+      <h2 data-i18n="feat_title">Why 7-Zip?</h2>
+      
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
         <div>
-          <div class="section-label">License</div>
-          <h2 class="section-title" style="font-size:1.75rem">Free. Open Source. Forever.</h2>
-          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.8;margin-top:0.5rem">
-            Most of the code is under the <strong style="color:var(--text)">GNU LGPL license</strong>. Some parts are under the <strong style="color:var(--text)">BSD 3-clause License</strong>. There is also an unRAR license restriction for some parts of the code.
-          </p>
-          <p style="color:var(--text-dim);font-size:0.9rem;line-height:1.8;margin-top:0.75rem">
-            You can use 7-Zip on any computer, including in a commercial organization. You don't need to register or pay for 7-Zip.
-          </p>
-          <a href="https://www.7-zip.org/license.txt" target="_blank" class="btn btn-secondary btn-sm" style="margin-top:1.25rem" id="licenseLink">Read License →</a>
+          <svg style="color:var(--accent); width:2rem; height:2rem; margin-bottom:1rem;" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+          <h3 style="font-size:1.1rem; margin-bottom:0.5rem" data-i18n="feat_1_title">Best Compression Ratio</h3>
+          <p class="text-muted" style="font-size:0.9rem" data-i18n="feat_1_desc">Our native 7z format with LZMA/LZMA2 provides a compression ratio up to 30-70% better than standard zip.</p>
         </div>
-        <div style="display:flex;flex-direction:column;gap:1rem;justify-content:center">
-          <div style="display:flex;align-items:center;gap:0.75rem"><span style="font-size:1.25rem">✅</span><span style="color:var(--text-dim);font-size:0.9rem">Free for personal use</span></div>
-          <div style="display:flex;align-items:center;gap:0.75rem"><span style="font-size:1.25rem">✅</span><span style="color:var(--text-dim);font-size:0.9rem">Free for commercial use</span></div>
-          <div style="display:flex;align-items:center;gap:0.75rem"><span style="font-size:1.25rem">✅</span><span style="color:var(--text-dim);font-size:0.9rem">Open source code available</span></div>
-          <div style="display:flex;align-items:center;gap:0.75rem"><span style="font-size:1.25rem">✅</span><span style="color:var(--text-dim);font-size:0.9rem">No registration required</span></div>
-          <div style="display:flex;align-items:center;gap:0.75rem"><span style="font-size:1.25rem">✅</span><span style="color:var(--text-dim);font-size:0.9rem">No ads or tracking</span></div>
+        <div>
+          <svg style="color:var(--accent-2); width:2rem; height:2rem; margin-bottom:1rem;" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          <h3 style="font-size:1.1rem; margin-bottom:0.5rem" data-i18n="feat_2_title">AES-256 Encryption</h3>
+          <p class="text-muted" style="font-size:0.9rem" data-i18n="feat_2_desc">Military-grade encryption for both files and filenames. Secure your data with confidence.</p>
+        </div>
+        <div>
+          <svg style="color:var(--success); width:2rem; height:2rem; margin-bottom:1rem;" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+          <h3 style="font-size:1.1rem; margin-bottom:0.5rem" data-i18n="feat_3_title">Universal Support</h3>
+          <p class="text-muted" style="font-size:0.9rem" data-i18n="feat_3_desc">Unpack ARJ, CAB, CHM, CPIO, CramFS, DEB, DMG, FAT, HFS, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, RAR, RPM, SquashFS, UDF, VHD, WIM, XAR and Z.</p>
+        </div>
+        <div>
+          <svg style="color:#f59e0b; width:2rem; height:2rem; margin-bottom:1rem;" viewBox="0 0 24 24"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+          <h3 style="font-size:1.1rem; margin-bottom:0.5rem" data-i18n="feat_4_title">Powerful CLI</h3>
+          <p class="text-muted" style="font-size:0.9rem" data-i18n="feat_4_desc">A powerful command line version that easily integrates with your scripts and CI/CD pipelines.</p>
         </div>
       </div>
+      
+      <!-- Format Strip -->
+      <h3 style="font-size:0.9rem; margin-top:3rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em;">Supported Formats (Drag to view)</h3>
+      <div class="format-strip">
+        <div class="format-pill native">7z</div>
+        <div class="format-pill native">XZ</div>
+        <div class="format-pill native">BZIP2</div>
+        <div class="format-pill native">GZIP</div>
+        <div class="format-pill native">TAR</div>
+        <div class="format-pill native">ZIP</div>
+        <div class="format-pill native">WIM</div>
+        <div class="format-pill">RAR</div>
+        <div class="format-pill">ISO</div>
+        <div class="format-pill">CAB</div>
+        <div class="format-pill">MSI</div>
+        <div class="format-pill">DEB</div>
+        <div class="format-pill">RPM</div>
+        <div class="format-pill">VHD</div>
+        <div class="format-pill">FAT</div>
+      </div>
     </div>
+    
   </div>
-</section>
+</main>
 
-<!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div style="font-size:1.2rem;font-weight:800;background:linear-gradient(135deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">7-Zip</div>
-        <p>Free and open-source file archiver with high compression ratio. Copyright &copy; 2026 Igor Pavlov.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Pages</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="download.html">Download</a></li>
-          <li><a href="7z.html">7z Format</a></li>
-          <li><a href="sdk.html">LZMA SDK</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Help</h4>
-        <ul>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="support.html">Support</a></li>
-          <li><a href="links.html">Links</a></li>
-          <li><a href="contributors.html">Community</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>External</h4>
-        <ul>
-          <li><a href="https://github.com/ip7z/7zip" target="_blank">GitHub</a></li>
-          <li><a href="https://sourceforge.net/projects/sevenzip/" target="_blank">SourceForge</a></li>
-          <li><a href="https://7-max.com" target="_blank">7-max</a></li>
-          <li><a href="https://www.7-zip.org/license.txt" target="_blank">License</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>Copyright &copy; 2026 Igor Pavlov. 7-Zip is free software distributed under the GNU LGPL.</p>
-      <p><a href="https://sourceforge.net/projects/sevenzip/" target="_blank" style="color:var(--primary);text-decoration:none">7-Zip at SourceForge</a></p>
+  <div class="container">
+    <div style="font-size:1.5rem; font-weight:800; color:var(--accent); margin-bottom:0.5rem;">7-Zip</div>
+    <p data-i18n="footer_desc">Free and open-source file archiver. The most powerful compression tool.</p>
+    <div style="margin-top:2rem; font-size:0.8rem; color:rgba(255,255,255,0.2);">
+      Copyright &copy; 2026 Igor Pavlov. Licensed under GNU LGPL.
     </div>
   </div>
 </footer>
 
-<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
+<script src="translations.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

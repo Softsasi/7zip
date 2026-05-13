@@ -3,156 +3,56 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Technical Support – 7-Zip</title>
-<meta name="description" content="Get technical support for 7-Zip. Find the forum, bug tracker, and contact information for the 7-Zip developer.">
+<title>Support – 7-Zip</title>
+<link rel="canonical" href="https://www.7-zip.org/support.html">
 <link rel="stylesheet" href="style.css">
-<link rel="icon" href="https://www.7-zip.org/favicon.ico">
 </head>
 <body>
+<div class="bg-mesh"></div>
 <nav class="navbar">
-  <a href="index.html" class="nav-brand"><img src="7zip-logo.png" alt="7-Zip Logo" onerror="this.style.display='none'"><span class="brand-name">7-Zip</span></a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="index.html">Home</a></li><li><a href="download.html">Download</a></li>
-    <li><a href="7z.html">7z Format</a></li><li><a href="sdk.html">LZMA SDK</a></li>
-    <li><a href="faq.html">FAQ</a></li><li><a href="support.html" class="active">Support</a></li>
-    <li><a href="links.html">Links</a></li><li><a href="contributors.html">Community</a></li>
+  <a href="index.html" class="nav-brand">
+    <svg width="24" height="24" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+    <span>7-Zip</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+    <li><a href="download.html" data-i18n="nav_download">Download</a></li>
+    <li><a href="7z.html" data-i18n="nav_7z">7z Format</a></li>
+    <li><a href="sdk.html" data-i18n="nav_sdk">LZMA SDK</a></li>
+    <li><a href="faq.html" data-i18n="nav_faq">FAQ</a></li>
+    <li><a href="support.html" class="active" data-i18n="nav_support">Support</a></li>
+    <li><a href="links.html" data-i18n="nav_links">Links</a></li>
+    <li><a href="contributors.html" data-i18n="nav_community">Community</a></li>
   </ul>
-  <div style="display:flex;align-items:center;gap:0.75rem">
-    <div class="lang-dropdown" id="langDropdown">
-      <button class="lang-btn">🌐 English <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
-      <div class="lang-menu">
-        <a href="support.html" class="current">🇬🇧 English</a>
-        <a href="https://sparanoid.com/lab/7z/" target="_blank">🇨🇳 Chinese (Simplified)</a>
-        <a href="https://www.7-zip.fr/" target="_blank">🇫🇷 French</a>
-        <a href="https://www.7-zip.de/" target="_blank">🇩🇪 German</a>
-        <a href="https://7-zip.opensource.jp/" target="_blank">🇯🇵 Japanese</a>
-        <a href="https://7zip-es.updatestar.com/" target="_blank">🇪🇸 Spanish</a>
-      </div>
+  <div class="lang-dropdown">
+    <button class="lang-btn"><span id="activeLang">English</span></button>
+    <div class="lang-menu">
+      <button data-lang="en">English</button><button data-lang="bn">বাংলা</button><button data-lang="hi">हिन्दी</button>
+      <button data-lang="zh-CN">简体中文</button><button data-lang="zh-TW">繁體中文</button>
     </div>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
-<div class="page-hero">
-  <div class="section-label">Help</div>
-  <h1>Technical Support</h1>
-  <p>Get help with 7-Zip — from the community forum to direct bug reporting.</p>
-</div>
-
-<section style="padding:3rem 1.5rem 5rem">
-  <div class="container">
-
-    <!-- CHECKLIST -->
-    <div class="card" style="background:linear-gradient(135deg,rgba(59,130,246,0.07),rgba(6,182,212,0.04));border-color:rgba(59,130,246,0.2);margin-bottom:3rem">
-      <div style="font-size:1.1rem;font-weight:700;margin-bottom:1.25rem;display:flex;align-items:center;gap:0.5rem">✅ Before Requesting Support</div>
-      <div class="grid-2" style="gap:1rem">
-        <div style="display:flex;flex-direction:column;gap:0.75rem">
-          <div style="display:flex;align-items:flex-start;gap:0.75rem">
-            <span style="background:rgba(59,130,246,0.15);color:var(--primary);width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;margin-top:0.1rem">1</span>
-            <span style="color:var(--text-dim);font-size:0.9rem">Check that you are using the <strong style="color:var(--text)">latest version</strong> of 7-Zip.</span>
-          </div>
-          <div style="display:flex;align-items:flex-start;gap:0.75rem">
-            <span style="background:rgba(59,130,246,0.15);color:var(--primary);width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;margin-top:0.1rem">2</span>
-            <span style="color:var(--text-dim);font-size:0.9rem">Try the latest <strong style="color:var(--text)">development/beta version</strong> — your issue may already be fixed.</span>
-          </div>
-          <div style="display:flex;align-items:flex-start;gap:0.75rem">
-            <span style="background:rgba(59,130,246,0.15);color:var(--primary);width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;margin-top:0.1rem">3</span>
-            <span style="color:var(--text-dim);font-size:0.9rem">On 64-bit Windows, make sure you use the <strong style="color:var(--text)">7-Zip x64</strong> installer.</span>
-          </div>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:0.75rem">
-          <div style="display:flex;align-items:flex-start;gap:0.75rem">
-            <span style="background:rgba(59,130,246,0.15);color:var(--primary);width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;margin-top:0.1rem">4</span>
-            <span style="color:var(--text-dim);font-size:0.9rem">Check the <strong style="color:var(--text)">7-Zip help system</strong> installed with the application.</span>
-          </div>
-          <div style="display:flex;align-items:flex-start;gap:0.75rem">
-            <span style="background:rgba(59,130,246,0.15);color:var(--primary);width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;margin-top:0.1rem">5</span>
-            <span style="color:var(--text-dim);font-size:0.9rem">Read the <a href="faq.html" style="color:var(--primary)">FAQ</a> page for answers to common questions.</span>
-          </div>
-          <div style="display:flex;align-items:flex-start;gap:0.75rem">
-            <span style="background:rgba(59,130,246,0.15);color:var(--primary);width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;flex-shrink:0;margin-top:0.1rem">6</span>
-            <span style="color:var(--text-dim);font-size:0.9rem">Search the <strong style="color:var(--text)">7-Zip forum</strong> for similar reports.</span>
-          </div>
-        </div>
-      </div>
+<main class="container">
+  <div class="bento-grid" style="padding-top: 6rem;">
+    <div class="bento-card col-span-12">
+      <h1 style="font-size:2.5rem; margin-bottom:1rem;">Support</h1>
+      <p class="text-muted" style="max-width:800px;">Before requesting support or reporting a bug, please check the <a href="faq.html" class="text-accent">FAQ</a>.</p>
     </div>
-
-    <!-- SUPPORT CHANNELS -->
-    <div class="section-label" style="margin-bottom:0.75rem">Support Channels</div>
-    <h2 style="font-size:1.6rem;font-weight:800;margin-bottom:2rem">How to Get Help</h2>
-
-    <div class="grid-3" style="gap:1.5rem;margin-bottom:3rem">
-      <div class="card" style="text-align:center;padding:2rem 1.5rem">
-        <div style="font-size:2.5rem;margin-bottom:1rem">💬</div>
-        <div style="font-weight:700;font-size:1.05rem;margin-bottom:0.5rem">Community Forum</div>
-        <p style="color:var(--text-muted);font-size:0.875rem;line-height:1.7;margin-bottom:1.25rem">Post your question for answers from 7-Zip developers and experienced users. Please write in English only.</p>
-        <a href="https://sourceforge.net/p/sevenzip/discussion/45797/" target="_blank" class="btn btn-primary btn-sm" id="supportForumBtn">Open Forum →</a>
-      </div>
-      <div class="card" style="text-align:center;padding:2rem 1.5rem">
-        <div style="font-size:2.5rem;margin-bottom:1rem">🐛</div>
-        <div style="font-weight:700;font-size:1.05rem;margin-bottom:0.5rem">Bug Reports</div>
-        <p style="color:var(--text-muted);font-size:0.875rem;line-height:1.7;margin-bottom:1.25rem">If you've found a bug, open a ticket in the BUGs section. Mark as Private for potential security vulnerabilities.</p>
-        <a href="https://sourceforge.net/p/sevenzip/bugs/" target="_blank" class="btn btn-secondary btn-sm" id="supportBugsBtn">Report a Bug →</a>
-      </div>
-      <div class="card" style="text-align:center;padding:2rem 1.5rem">
-        <div style="font-size:2.5rem;margin-bottom:1rem">📨</div>
-        <div style="font-weight:700;font-size:1.05rem;margin-bottom:0.5rem">Private Contact</div>
-        <p style="color:var(--text-muted);font-size:0.875rem;line-height:1.7;margin-bottom:1.25rem">Contact the developer via SourceForge "Send Message" service or create a private support ticket for sensitive issues.</p>
-        <a href="https://sourceforge.net/p/sevenzip/support-requests/" target="_blank" class="btn btn-secondary btn-sm" id="supportPrivateBtn">Submit Request →</a>
-      </div>
+    
+    <div class="bento-card col-span-6" style="border-color:var(--accent);">
+      <h3 style="margin-bottom:1rem;">SourceForge Forum</h3>
+      <p class="text-muted" style="margin-bottom:2rem;">The official community forum for 7-Zip users and developers. Ask questions, report bugs, and share solutions.</p>
+      <a href="https://sourceforge.net/p/sevenzip/discussion/" target="_blank" class="btn btn-primary">Go to Forum</a>
     </div>
-
-    <!-- FORUM INFO -->
-    <div class="card" style="margin-bottom:2rem">
-      <div style="font-weight:700;font-size:1rem;margin-bottom:1rem">📋 What to Include in a Forum Post</div>
-      <p style="color:var(--text-dim);font-size:0.9rem;margin-bottom:1rem">When reporting a problem on the forum, please include the following information:</p>
-      <div class="grid-2" style="gap:1rem">
-        <div style="display:flex;align-items:center;gap:0.75rem;padding:0.75rem;background:var(--glass);border-radius:8px">
-          <span style="font-size:1.25rem">📦</span>
-          <div>
-            <div style="font-weight:600;font-size:0.875rem">7-Zip Version</div>
-            <div style="color:var(--text-muted);font-size:0.8rem">Exact version number and type (32-bit or 64-bit)</div>
-          </div>
-        </div>
-        <div style="display:flex;align-items:center;gap:0.75rem;padding:0.75rem;background:var(--glass);border-radius:8px">
-          <span style="font-size:1.25rem">🪟</span>
-          <div>
-            <div style="font-weight:600;font-size:0.875rem">Windows Version</div>
-            <div style="color:var(--text-muted);font-size:0.8rem">OS version and type (32-bit or 64-bit)</div>
-          </div>
-        </div>
-      </div>
+    
+    <div class="bento-card col-span-6">
+      <h3 style="margin-bottom:1rem;">GitHub Issues</h3>
+      <p class="text-muted" style="margin-bottom:2rem;">For developers and technical bug reports. Check existing issues before opening a new one.</p>
+      <a href="https://github.com/ip7z/7zip/issues" target="_blank" class="btn btn-secondary">View Issues</a>
     </div>
-
-    <!-- GITHUB -->
-    <div class="card" style="background:linear-gradient(135deg,rgba(16,185,129,0.06),rgba(6,182,212,0.04));border-color:rgba(16,185,129,0.2)">
-      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
-        <div>
-          <div style="font-weight:700;font-size:1rem;margin-bottom:0.35rem">🐙 Also on GitHub</div>
-          <p style="color:var(--text-muted);font-size:0.875rem">Browse source code, releases, and open issues on the official 7-Zip GitHub repository.</p>
-        </div>
-        <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
-          <a href="https://github.com/ip7z/7zip/issues" target="_blank" class="btn btn-secondary btn-sm" id="ghIssuesBtn">Open Issues (142)</a>
-          <a href="https://github.com/ip7z/7zip" target="_blank" class="btn btn-secondary btn-sm" id="ghRepoBtn">View Repository →</a>
-        </div>
-      </div>
-    </div>
-
   </div>
-</section>
-
-<footer>
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div class="footer-brand"><div style="font-size:1.2rem;font-weight:800;background:linear-gradient(135deg,#3b82f6,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">7-Zip</div><p>Free and open-source file archiver. Copyright &copy; 2026 Igor Pavlov.</p></div>
-      <div class="footer-col"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="download.html">Download</a></li><li><a href="7z.html">7z Format</a></li><li><a href="sdk.html">LZMA SDK</a></li></ul></div>
-      <div class="footer-col"><h4>Help</h4><ul><li><a href="faq.html">FAQ</a></li><li><a href="support.html">Support</a></li><li><a href="links.html">Links</a></li><li><a href="contributors.html">Community</a></li></ul></div>
-      <div class="footer-col"><h4>External</h4><ul><li><a href="https://github.com/ip7z/7zip" target="_blank">GitHub</a></li><li><a href="https://sourceforge.net/projects/sevenzip/" target="_blank">SourceForge</a></li></ul></div>
-    </div>
-    <div class="footer-bottom"><p>Copyright &copy; 2026 Igor Pavlov. 7-Zip is free software distributed under the GNU LGPL.</p></div>
-  </div>
-</footer>
-<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
-<script src="script.js"></script>
+</main>
+<script src="translations.js"></script><script src="script.js"></script>
 </body>
 </html>
