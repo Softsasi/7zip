@@ -91,6 +91,19 @@ function initNavbar() {
       navbar.classList.remove('compact');
     }
   });
+
+  // Mobile Menu Toggle
+  const navLinks = document.querySelector('.nav-links');
+  if (navbar && navLinks) {
+    const toggleBtn = document.createElement('button');
+    toggleBtn.className = 'menu-toggle';
+    toggleBtn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
+    navbar.insertBefore(toggleBtn, navLinks);
+
+    toggleBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  }
 }
 
 // --- 3. 3D Card Tilt Effect ---
