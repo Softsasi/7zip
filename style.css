@@ -48,7 +48,7 @@ body::before {
   background-size: 20px 20px;
   z-index: -1;
   pointer-events: none;
-  animation: slideDots 40s linear infinite;
+  animation: slideDots 5s linear infinite;
 }
 
 @keyframes slideDots {
